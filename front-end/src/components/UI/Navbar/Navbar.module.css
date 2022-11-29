@@ -1,0 +1,24 @@
+.navbar {
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background: lightblue;
+}
+
+.navbar__links {
+    margin-left: auto;
+    background: lightblue;
+}
+
+.link {
+    display: inline;
+    text-decoration: none;
+    text-shadow: 1px 1px 8px black;
+    margin-right: 8px;
+    padding: 5px 10px;
+    color: whitesmoke;
+    font-size: 18px;
+    background: lightblue;
+}
