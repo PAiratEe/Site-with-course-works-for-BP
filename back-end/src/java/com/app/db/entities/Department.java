@@ -1,6 +1,8 @@
 package com.app.db.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Departments")
@@ -8,13 +10,12 @@ public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long departmentId;
 
-    @Column(name = "departmentName")
     private String departmentName;
 
     public Long getId() {
-        return this.id;
+        return this.departmentId;
     }
 
     public String getDepartmentName() {
@@ -22,7 +23,7 @@ public class Department {
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.departmentId = id;
     }
 
     public void setDepartmentName(String departmentName) {

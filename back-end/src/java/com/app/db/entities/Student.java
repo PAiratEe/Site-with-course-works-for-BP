@@ -1,5 +1,8 @@
 package com.app.db.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 
@@ -9,7 +12,7 @@ public class Student{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long studentId;
 
     private String name;
     private String surname;
@@ -17,9 +20,28 @@ public class Student{
     private String email;
     private Integer course;
 
+    @Getter
+    @Setter
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "departmentId", referencedColumnName = "studentId")
+    private Department department;
+
+    @Getter
+    @Setter
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "courseWorkId", referencedColumnName = "studentId")
+    private CourseWork courseWork;
+
+
+    @Getter
+    @Setter
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id", referencedColumnName = "studentId")
+    private EducationalProgramm educationalProgramm;
+
 
     public Long getId() {
-        return this.id;
+        return this.studentId;
     }
 
     public String getName() {
@@ -43,7 +65,7 @@ public class Student{
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.studentId = id;
     }
 
     public void setName(String name) {

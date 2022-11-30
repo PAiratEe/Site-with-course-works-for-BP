@@ -8,7 +8,7 @@ public class Professor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long professorId;
 
     private String name;
     private String surname;
@@ -16,8 +16,13 @@ public class Professor {
     private String email;
     private String post;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "departmentId", referencedColumnName = "professorId")
+    private Department department;
+
+
     public Long getId() {
-        return this.id;
+        return this.professorId;
     }
 
     public String getName() {
@@ -41,7 +46,7 @@ public class Professor {
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.professorId = id;
     }
 
     public void setName(String name) {
@@ -62,5 +67,13 @@ public class Professor {
 
     public void setPost(String post) {
         this.post = post;
+    }
+
+    public Department getDepartment() {
+        return this.department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }

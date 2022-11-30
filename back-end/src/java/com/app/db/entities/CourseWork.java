@@ -7,13 +7,21 @@ import javax.persistence.*;
 public class CourseWork {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long courseWorkId;
 
     private String title;
     private String requirements;
 
-    public Long getId() {
-        return this.id;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "departmentId", referencedColumnName = "courseWorkId")
+    private Department department;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "professorId", referencedColumnName = "courseWorkId")
+    private Professor professor;
+
+    public Long getCourseWorkId() {
+        return this.courseWorkId;
     }
 
     public String getTitle() {
@@ -24,8 +32,8 @@ public class CourseWork {
         return this.requirements;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCourseWorkId(Long courseWorkId) {
+        this.courseWorkId = courseWorkId;
     }
 
     public void setTitle(String title) {
@@ -34,5 +42,21 @@ public class CourseWork {
 
     public void setRequirements(String requirements) {
         this.requirements = requirements;
+    }
+
+    public Department getDepartment() {
+        return this.department;
+    }
+
+    public Professor getProfessor() {
+        return this.professor;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 }
