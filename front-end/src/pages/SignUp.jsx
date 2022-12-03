@@ -1,14 +1,15 @@
-import React, {useContext} from 'react';
-import MyInput from "../components/UI/input/MyInput";
-import MyButton from "../components/UI/button/MyButton";
+import React from 'react';
+import {useContext} from "react";
 import {AuthContext} from "../context";
 import {useNavigate} from "react-router-dom";
+import MyInput from "../components/UI/input/MyInput";
+import MyButton from "../components/UI/button/MyButton";
 
-const Login = () => {
+const SignUp = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext)
     const navigate = useNavigate()
 
-    const login = event => {
+    const signup = event => {
         event.preventDefault()
         setIsAuth(true)
         localStorage.setItem('auth', 'Airat')
@@ -18,22 +19,29 @@ const Login = () => {
     return (
         <div>
             <h1>Страница для входа</h1>
-            <form onSubmit={login}>
+            <form onSubmit={signup}>
                 <MyInput
                     type="email"
-                    placeholder="Введите логин st"
                     pattern=".+@student\.spbu\.ru"
+                    placeholder="st******@student.spbu.ru"
                     required
                 />
                 <MyInput
+                    id="Password"
                     type="password"
                     placeholder="Введите пароль"
                     required
                 />
-                <MyButton>Войти</MyButton>
+                <MyInput
+                    id="PasswordConfirm"
+                    type="password"
+                    placeholder="Повторите пароль"
+                    required
+                />
+                <MyButton>Зарегистрироваться</MyButton>
             </form>
         </div>
     );
 };
 
-export default Login;
+export default SignUp;

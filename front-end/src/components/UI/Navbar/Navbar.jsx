@@ -10,26 +10,27 @@ const Navbar = () => {
 
     return (
         isAuth
-        ?
-        <div className={classes.navbar}>
-            <Link className={classes.link} to="/"><img className={classes.img} src={logo}/></Link>
-            <div className={classes.navbar__links}>
-                <Link className={classes.link} to="/about">О сайте</Link>
-                <Link className={classes.link} to="/posts">Список кафедр</Link>
-                <Link className={classes.link} to="/teachers">Список преподавателей</Link>
-                <BasicMenu/>
+            ?
+            <div className={classes.navbar}>
+                <Link className={classes.link} to="/"><img src={logo}/></Link>
+                <div className={classes.navbar__links}>
+                    <Link className={classes.link} to="/about">О сайте</Link>
+                    <Link className={classes.link} to="/posts">Список кафедр</Link>
+                    <Link className={classes.link} to="/teachers">Список преподавателей</Link>
+                    <BasicMenu/>
+                </div>
             </div>
-        </div>
-        :
-        <div className={classes.navbar}>
-            <Link className={classes.link} to="/"><img src={logo}/></Link>
-            <div className={classes.navbar__links}>
-                <Link className={classes.link} to="/about">О сайте</Link>
-                <Link className={classes.link} to="/posts">Список кафедр</Link>
-                <Link className={classes.link} to="/teachers">Список преподавателей</Link>
-                <Link className={classes.link} to="/login">Войти</Link>
+            :
+            <div className={classes.navbar}>
+                <Link className={classes.link} to="/"><img src={logo}/></Link>
+                <div className={classes.navbar__links}>
+                    <Link className={classes.link} to="/about">О сайте</Link>
+                    <Link className={classes.link} to="/posts">Список кафедр</Link>
+                    <Link className={classes.link} to="/teachers">Список преподавателей</Link>
+                    <Link className={classes.link} to="/login">Войти</Link>
+                    <Link className={classes.link} to="/register">Регистрация</Link>
+                </div>
             </div>
-        </div>
     );
 };
 
