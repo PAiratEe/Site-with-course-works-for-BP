@@ -5,7 +5,7 @@ import classes from "../Navbar/Navbar.module.css";
 import {Button} from "@mui/material";
 import {useContext} from "react";
 import {AuthContext} from "../../../context";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export default function BasicMenu() {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -40,10 +40,7 @@ export default function BasicMenu() {
                     fontSize: "18px",
                     fontFamily: "Microsoft Sans Serif",
                     textTransform: "capitalize",
-                    marginTop: "-3px",
-                    marginLeft: "-10px",
-                    marginRight: "-10px",
-                    }}
+                }}
             >
                 {localStorage.getItem('auth')}
             </Button>
@@ -57,7 +54,7 @@ export default function BasicMenu() {
                 }}
                 sx={{
                     "& .MuiPaper-root":{
-                        backgroundColor:"lightblue"
+                        backgroundColor: "lightblue"
                     }
                 }}
             >

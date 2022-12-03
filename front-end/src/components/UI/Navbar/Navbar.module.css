@@ -10,6 +10,11 @@
 .navbar__links {
     margin-left: auto;
     background: lightblue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 31px;
+    width: auto;
 }
 
 .link {
@@ -17,7 +22,7 @@
     text-decoration: none;
     text-shadow: 1px 1px 8px black;
     margin-right: 8px;
-    padding: 5px 10px;
+    padding: 0px 10px;
     color: whitesmoke;
     font-size: 18px;
     background: lightblue;
