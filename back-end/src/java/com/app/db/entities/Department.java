@@ -1,8 +1,6 @@
 package com.app.db.entities;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Departments")

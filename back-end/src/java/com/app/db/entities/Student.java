@@ -1,9 +1,6 @@
 package com.app.db.entities;
 
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -20,21 +17,15 @@ public class Student{
     private String email;
     private Integer course;
 
-    @Getter
-    @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "departmentId", referencedColumnName = "studentId")
     private Department department;
 
-    @Getter
-    @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "courseWorkId", referencedColumnName = "studentId")
     private CourseWork courseWork;
 
 
-    @Getter
-    @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id", referencedColumnName = "studentId")
     private EducationalProgramm educationalProgramm;
@@ -86,5 +77,29 @@ public class Student{
 
     public void setCourse(Integer course) {
         this.course = course;
+    }
+
+    public Department getDepartment() {
+        return this.department;
+    }
+
+    public CourseWork getCourseWork() {
+        return this.courseWork;
+    }
+
+    public EducationalProgramm getEducationalProgramm() {
+        return this.educationalProgramm;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public void setCourseWork(CourseWork courseWork) {
+        this.courseWork = courseWork;
+    }
+
+    public void setEducationalProgramm(EducationalProgramm educationalProgramm) {
+        this.educationalProgramm = educationalProgramm;
     }
 }
