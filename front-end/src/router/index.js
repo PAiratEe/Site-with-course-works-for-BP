@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import MainPage from "../pages/MainPage";
 import Teachers from "../pages/Teachers";
 import MyProfile from "../pages/MyProfile";
+import SignUp from "../pages/SignUp";
 
 export const privateRoutes = [
     {path: '/posts/:id', element: <PostIdPage/>},
@@ -14,6 +15,7 @@ export const privateRoutes = [
 export const publicRoutes = [
     {path: '/', element: <MainPage/>},
     {path: '/login', element: <Login/>},
+    {path: '/register', element: <SignUp/>},
     {path: '/about', element: <About/>},
     {path: '/posts', element: <Posts/>},
     {path: '/teachers', element: <Teachers/>},

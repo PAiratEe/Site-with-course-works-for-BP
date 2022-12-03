@@ -37,3 +37,9 @@ img {
     width: 200px;
     background: none;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

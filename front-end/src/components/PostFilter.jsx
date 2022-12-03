@@ -3,7 +3,12 @@ import MyInput from "./UI/input/MyInput";
 
 const PostFilter = ({filter, setFilter}) => {
     return (
-        <div>
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+        }}
+        >
             <MyInput
                 value={filter.query}
                 onChange={e => setFilter({...filter, query: e.target.value})}
