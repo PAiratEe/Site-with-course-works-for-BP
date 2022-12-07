@@ -17,6 +17,8 @@ public class Student{
     private String email;
     private Integer course;
 
+    private String password;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "departmentId", referencedColumnName = "studentId")
     private Department department;
@@ -101,5 +103,13 @@ public class Student{
 
     public void setEducationalProgramm(EducationalProgramm educationalProgramm) {
         this.educationalProgramm = educationalProgramm;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
