@@ -17,7 +17,11 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="SecurityConfiguration" removed="false">
+          <file>file://$MODULE_DIR$/back-end/src/main/java/com/app/Configuration/SecurityConfiguration.java</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_18">

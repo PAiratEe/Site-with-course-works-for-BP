@@ -18,13 +18,18 @@ class AuthService {
             });
     }
 
-    register(email,password){
-        console.log(email)
-        console.log(password)
-        return axios.post(back_URL +"/register",{
-            email,
-            password
+    register(email, password)
+    {
+        return axios.post(back_URL + "/register", {
+            "email": email,
+            "password": password,
+            "surname": "Korolyov",
+            "name": "Artyom",
+            "patronymic": "Sergeevich",
+            "course": "1",
+            "department": "ПМИ"
         })
+
     }
 }
 

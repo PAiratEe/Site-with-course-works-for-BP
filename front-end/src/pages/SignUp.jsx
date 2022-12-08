@@ -5,28 +5,37 @@ import {useHref, useNavigate} from "react-router-dom";
 import MyInput from "../components/UI/input/MyInput";
 import MyButton from "../components/UI/button/MyButton";
 import AuthService from "../services/AuthService";
-import {Button} from "@mui/material";
+import {Button, TextField} from "@mui/material";
 
 const SignUp = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext)
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
-    const [passwordConfirmation, setPasswordConfirm] = useState("")
+    const [passwordRepeat, setPasswordConfirm] = useState("")
+    const [name,setName] = useState("")
 
     const navigate = useNavigate()
 
     function onChangeEmail(e){
-        setEmail(e.target.email)
+        setEmail(e.target.value)
     }
 
     function onChangePassword(e){
-        setPassword(e.target.password)
+        setPassword(e.target.value)
+    }
+
+    function onChangeConfirmationPassword(e){
+        setPasswordConfirm(e.target.value)
+    }
+
+    function onChangeName(e){
+        setName(e.target.value)
     }
 
 
     function signup(e){
-        e.preventDefault();
-        AuthService.register(e.email,e.password).then(response=>{
+        e.preventDefault()
+        AuthService.register(email,password).then(response=>{
             setIsAuth(true)
             localStorage.setItem('auth','Airat')
             navigate(-1)
@@ -34,19 +43,13 @@ const SignUp = () => {
         )
     }
 
-    /*const signup = event => {
-        event.preventDefault()
-        setIsAuth(true)
-        localStorage.setItem('auth', 'Airat')
-        navigate(-1)
-    }*/
-
     return (
         <div>
             <h1>Страница для входа</h1>
             <form onSubmit={signup} method="post">
                 <MyInput
                     required
+                    type="email"
                     pattern=".+@student\.spbu\.ru"
                     placeholder="st******@student.spbu.ru"
                     name="email"
@@ -57,18 +60,30 @@ const SignUp = () => {
                 <MyInput
                     required
                     id="password"
+                    type="password"
                     placeholder="Введите пароль"
                     name="password"
                     value = {password}
                     onChange = {onChangePassword}
                 />
                 <MyInput
-                    id="PasswordConfirm"
-                    type="password"
+                    id="passwordRepeat"
                     placeholder="Повторите пароль"
-                    name="PasswordConfirm"
+                    name="passwordRepeat"
+                    type="passwordRepeat"
+                    value={passwordRepeat}
+                    onChange = {onChangeConfirmationPassword}
                 />
-                <MyButton>Зарегистрироваться</MyButton>
+                <MyInput
+                    required
+                    id="name"
+                    name="name"
+                    type="name"
+                    value={name}
+                    placeholder="Имя"
+                    onChange = {onChangeName}
+                    />
+                <MyButton type="submit">Зарегистрироваться</MyButton>
             </form>
         </div>
     );
