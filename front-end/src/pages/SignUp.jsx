@@ -15,7 +15,6 @@ const SignUp = () => {
     const [name,setName] = useState("")
 
     const navigate = useNavigate()
-
     function onChangeEmail(e){
         setEmail(e.target.value)
     }

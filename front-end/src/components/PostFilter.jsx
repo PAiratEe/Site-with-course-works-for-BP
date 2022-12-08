@@ -6,7 +6,8 @@ const PostFilter = ({filter, setFilter}) => {
         <div style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
+            width: "100%",
         }}
         >
             <MyInput

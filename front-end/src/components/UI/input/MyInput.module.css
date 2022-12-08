@@ -1,8 +1,9 @@
 .myInput {
-    width: 20vw;
+    width: 100%;
     padding: 5px 15px;
     margin-top: 5px;
-    border: 1px solid teal;
+    border: 1px solid #87AADF;
     border-radius: 3px;
     font-size: medium;
+    color: lightgray;
 }

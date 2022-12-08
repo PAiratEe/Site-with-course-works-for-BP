@@ -4,7 +4,7 @@ const MyProfile = (props) => {
     const name = localStorage.getItem('auth')
     return (
         <h1>
-            {name} is BASTAAARD!
+            You know nothing, {name}
         </h1>
     );
 };
