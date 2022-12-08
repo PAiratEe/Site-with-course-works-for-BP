@@ -6,16 +6,6 @@ import {useState} from "react";
 const PostForm = ({create}) => {
     const [post, setPost] = useState({title: '', body: ''})
 
-    const addNewPost = (e) => {
-        e.preventDefault()
-
-        const newPost = {
-            ...post, id: Date.now()
-        }
-        create(newPost)
-        setPost({title: '', body: ''})
-    }
-
     return (
         <form>
             <MyInput
@@ -31,7 +21,6 @@ const PostForm = ({create}) => {
                 type="text"
                 placeholder="Описание поста"
             />
-            <MyButton onClick={addNewPost}>Создать пост</MyButton>
         </form>
     );
 };
