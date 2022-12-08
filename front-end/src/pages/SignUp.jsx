@@ -1,44 +1,88 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {useContext} from "react";
 import {AuthContext} from "../context";
-import {Form, useNavigate} from "react-router-dom";
+import {useHref, useNavigate} from "react-router-dom";
 import MyInput from "../components/UI/input/MyInput";
-import {Button} from "@mui/material";
+import MyButton from "../components/UI/button/MyButton";
+import AuthService from "../services/AuthService";
+import {Button, TextField} from "@mui/material";
 
 const SignUp = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext)
-    const navigate = useNavigate()
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+    const [passwordRepeat, setPasswordConfirm] = useState("")
+    const [name,setName] = useState("")
 
-    const signup = event => {
-        event.preventDefault()
-        setIsAuth(true)
-        localStorage.setItem('auth', 'Jon Snow')
-        navigate(-1)
+    const navigate = useNavigate()
+    function onChangeEmail(e){
+        setEmail(e.target.value)
+    }
+
+    function onChangePassword(e){
+        setPassword(e.target.value)
+    }
+
+    function onChangeConfirmationPassword(e){
+        setPasswordConfirm(e.target.value)
+    }
+
+    function onChangeName(e){
+        setName(e.target.value)
+    }
+
+
+    function signup(e){
+        e.preventDefault()
+        AuthService.register(email,password).then(response=>{
+            setIsAuth(true)
+            localStorage.setItem('auth','Airat')
+            navigate(-1)
+        }
+        )
     }
 
     return (
         <div>
-            <h1>Страница для регистрации</h1>
-            <form onSubmit={signup}>
+            <h1>Страница для входа</h1>
+            <form onSubmit={signup} method="post">
                 <MyInput
+                    required
                     type="email"
                     pattern=".+@student\.spbu\.ru"
                     placeholder="st******@student.spbu.ru"
-                    required
+                    name="email"
+                    id = "email"
+                    value = {email}
+                    onChange ={onChangeEmail}
                 />
                 <MyInput
-                    id="Password"
+                    required
+                    id="password"
                     type="password"
                     placeholder="Введите пароль"
-                    required
+                    name="password"
+                    value = {password}
+                    onChange = {onChangePassword}
                 />
                 <MyInput
-                    id="PasswordConfirm"
-                    type="password"
+                    id="passwordRepeat"
                     placeholder="Повторите пароль"
-                    required
+                    name="passwordRepeat"
+                    type="passwordRepeat"
+                    value={passwordRepeat}
+                    onChange = {onChangeConfirmationPassword}
                 />
-                <Button>Зарегистрироваться</Button>
+                <MyInput
+                    required
+                    id="name"
+                    name="name"
+                    type="name"
+                    value={name}
+                    placeholder="Имя"
+                    onChange = {onChangeName}
+                    />
+                <MyButton type="submit">Зарегистрироваться</MyButton>
             </form>
         </div>
     );
