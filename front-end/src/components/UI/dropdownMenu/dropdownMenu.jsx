@@ -5,7 +5,7 @@ import classes from "../Navbar/Navbar.module.css";
 import {Button} from "@mui/material";
 import {useContext} from "react";
 import {AuthContext} from "../../../context";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export default function BasicMenu() {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -36,7 +36,7 @@ export default function BasicMenu() {
                 onClick={handleClick}
                 sx={{
                     color: "whitesmoke",
-                    // textShadow: "1px 1px 8px black",
+                    textShadow: "0px 0px 3px gray",
                     fontSize: "18px",
                     fontFamily: "Microsoft Sans Serif",
                     textTransform: "capitalize",
@@ -62,7 +62,7 @@ export default function BasicMenu() {
                     onClick={() => nav("/profile")}
                     sx={{
                         color: "whitesmoke",
-                        textShadow: "1px 1px 8px black",
+                        textShadow: "0px 0px 3px gray",
                         fontSize: "18px",
                         fontFamily: "Microsoft Sans Serif",
                         textTransform: "capitalize",
@@ -74,7 +74,7 @@ export default function BasicMenu() {
                     onClick={logout}
                     sx={{
                         color: "whitesmoke",
-                        textShadow: "1px 1px 8px black",
+                        textShadow: "0px 0px 3px gray",
                         fontSize: "18px",
                         fontFamily: "Microsoft Sans Serif",
                         textTransform: "capitalize",

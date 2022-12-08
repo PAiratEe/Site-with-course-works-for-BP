@@ -29,7 +29,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -43,7 +43,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -57,7 +57,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -87,7 +87,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -101,7 +101,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -115,7 +115,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -129,7 +129,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -143,7 +143,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",

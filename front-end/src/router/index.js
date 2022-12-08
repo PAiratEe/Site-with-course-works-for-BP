@@ -8,16 +8,19 @@ import MyProfile from "../pages/MyProfile";
 import SignUp from "../pages/SignUp";
 
 export const privateRoutes = [
-    {path: '/posts/:id', element: <PostIdPage/>},
     {path: '/profile', element: <MyProfile/>},
 ]
 
 export const publicRoutes = [
     {path: '/', element: <MainPage/>},
-    {path: '/login', element: <Login/>},
-    {path: '/register', element: <SignUp/>},
     {path: '/about', element: <About/>},
     {path: '/posts', element: <Posts/>},
+    {path: '/posts/:id', element: <PostIdPage/>},
     {path: '/teachers', element: <Teachers/>},
-    {path: '/*', element: <Login/>},
+    {path: '/*', element: <MainPage/>},
+]
+
+export const logRoutes = [
+    {path: '/login', element: <Login/>},
+    {path: '/register', element: <SignUp/>},
 ]

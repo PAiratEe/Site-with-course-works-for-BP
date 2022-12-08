@@ -17,7 +17,7 @@ const Login = () => {
 
     return (
         <div>
-            <h1>Страница для входа</h1>
+            <h1>Вход</h1>
             <form onSubmit={login}>
                 <MyInput
                     type="email"
@@ -30,7 +30,17 @@ const Login = () => {
                     placeholder="Введите пароль"
                     required
                 />
-                <Button>Войти</Button>
+                <Button
+                    type="submit"
+                    sx={{
+                        color: "#87AADF",
+                        fontSize: "18px",
+                        fontFamily: "Microsoft Sans Serif",
+                        textTransform: "capitalize",
+                    }}
+                >
+                    Войти
+                </Button>
             </form>
         </div>
     );
