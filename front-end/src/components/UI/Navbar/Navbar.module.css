@@ -3,12 +3,13 @@
     width: 100vw;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     padding: 0 15px;
-    background: lightblue;
+    background: #87AADF;
 }
 
 .navbar__links {
-    margin-left: auto;
+    justify-content: space-between;
     background: lightblue;
     display: flex;
     flex-direction: row;
@@ -18,12 +19,16 @@
 }
 
 .link {
-    display: inline;
+    display: flex;
     text-decoration: none;
-    text-shadow: 1px 1px 8px black;
-    margin-right: 8px;
+    /*text-shadow: 1px 1px 8px black;*/
     padding: 0px 10px;
     color: whitesmoke;
     font-size: 18px;
-    background: lightblue;
+    background: #87AADF;
+}
+
+.logo {
+    width: 50px;
+    background: none;
 }

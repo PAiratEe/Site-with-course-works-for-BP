@@ -36,7 +36,7 @@ export default function BasicMenu() {
                 onClick={handleClick}
                 sx={{
                     color: "whitesmoke",
-                    textShadow: "1px 1px 8px black",
+                    // textShadow: "1px 1px 8px black",
                     fontSize: "18px",
                     fontFamily: "Microsoft Sans Serif",
                     textTransform: "capitalize",
@@ -54,7 +54,7 @@ export default function BasicMenu() {
                 }}
                 sx={{
                     "& .MuiPaper-root":{
-                        backgroundColor: "lightblue"
+                        backgroundColor: "#87AADF"
                     }
                 }}
             >

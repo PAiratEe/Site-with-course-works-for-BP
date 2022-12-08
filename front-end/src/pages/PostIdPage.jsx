@@ -19,10 +19,10 @@ const PostIdPage = () => {
         <div>
             {isLoading
                 ?
-                <h2>Загружаю...</h2>
+                <h1>Загружаю...</h1>
                 :
                 <div>
-                    <h2>{post.id}. {post.title}</h2>
+                    <h1 style={{textAlign: "left"}}>{post.id}. {post.title}</h1>
                     <div>{post.body}</div>
                 </div>
             }

@@ -11,18 +11,17 @@ const PostList = ({posts, title}) => {
 
     if (!sortedAndSearchedPosts.length) {
         return (
-            <div>
+            <div style={{width: "40vw"}}>
                 <h1>{title}</h1>
                 <PostFilter filter={filter} setFilter={setFilter}/>
                 <h2>Посты не найдены!</h2>
-                <h3>Пошел нахуй! еблан иди займись чем нибудь полезным </h3>
             </div>
 
         )
     }
 
     return (
-        <div>
+        <div style={{width: "40vw"}}>
             <h1>{title}</h1>
             <PostFilter filter={filter} setFilter={setFilter}/>
             {sortedAndSearchedPosts.map((post, index) =>

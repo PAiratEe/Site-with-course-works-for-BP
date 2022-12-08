@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import MyInput from "../components/UI/input/MyInput";
-import MyButton from "../components/UI/button/MyButton";
 import {AuthContext} from "../context";
 import {useNavigate} from "react-router-dom";
+import {Button} from "@mui/material";
 
 const Login = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext)
@@ -11,7 +11,7 @@ const Login = () => {
     const login = event => {
         event.preventDefault()
         setIsAuth(true)
-        localStorage.setItem('auth', 'Airat')
+        localStorage.setItem('auth', 'Jon Snow')
         navigate(-1)
     }
 
@@ -30,7 +30,7 @@ const Login = () => {
                     placeholder="Введите пароль"
                     required
                 />
-                <MyButton>Войти</MyButton>
+                <Button>Войти</Button>
             </form>
         </div>
     );

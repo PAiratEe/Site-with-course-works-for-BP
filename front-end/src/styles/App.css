@@ -12,34 +12,36 @@
 }
 
 .App {
-    width: 100vw;
-}
-
-.post {
+    width: 100%;
     display: flex;
-    padding: 15px;
-    border: 2px solid teal;
-    border-radius: 3px;
-    margin: 15px;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
 h1, h2 {
-    color: whitesmoke;
-    text-shadow: 1px 1px 3px black;
-    margin: 10px;
+    color: lightgray;
+    margin: 10px 0px;
     text-align: center;
-}
-
-img {
-    margin: -20px;
-    width: 200px;
-    background: none;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+td {
+    padding: 1%;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    align-items: center;
+    border: 3px solid #87AADF;
+    border-radius: 3px;
 }
