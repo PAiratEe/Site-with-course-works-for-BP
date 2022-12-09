@@ -12,11 +12,11 @@ public class CourseWork {
     private String requirements;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "departmentId", referencedColumnName = "courseWorkId")
+    @JoinColumn(name = "departmentsId", referencedColumnName = "departmentId")
     private Department department;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "professorId", referencedColumnName = "courseWorkId")
+    @JoinColumn(name = "professorid", referencedColumnName = "professorId")
     private Professor professor;
 
     public Long getCourseWorkId() {

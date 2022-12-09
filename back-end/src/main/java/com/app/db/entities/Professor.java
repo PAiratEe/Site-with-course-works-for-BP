@@ -16,7 +16,7 @@ public class Professor {
     private String post;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "departmentId", referencedColumnName = "professorId")
+    @JoinColumn(name = "departmentsid", referencedColumnName = "departmentId")
     private Department department;
 
 
