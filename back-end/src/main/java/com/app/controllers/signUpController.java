@@ -8,11 +8,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 public class signUpController {
 
-    @Autowired
+    @Autowired(required = false)
     StudentRepository studentRepository;
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody SignUpRequest signUpRequest) {
         Student student = new Student();
