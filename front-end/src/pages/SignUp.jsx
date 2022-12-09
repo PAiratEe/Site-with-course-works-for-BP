@@ -3,7 +3,6 @@ import {useContext} from "react";
 import {AuthContext} from "../context";
 import {useHref, useNavigate} from "react-router-dom";
 import MyInput from "../components/UI/input/MyInput";
-import MyButton from "../components/UI/button/MyButton";
 import AuthService from "../services/AuthService";
 import {Button, TextField} from "@mui/material";
 
@@ -82,7 +81,7 @@ const SignUp = () => {
                     placeholder="Имя"
                     onChange = {onChangeName}
                     />
-                <MyButton type="submit">Зарегистрироваться</MyButton>
+                <Button type="submit">Зарегистрироваться</Button>
             </form>
         </div>
     );
