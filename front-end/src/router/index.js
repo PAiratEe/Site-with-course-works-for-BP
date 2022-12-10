@@ -6,6 +6,8 @@ import MainPage from "../pages/MainPage";
 import Teachers from "../pages/Teachers";
 import MyProfile from "../pages/MyProfile";
 import SignUp from "../pages/SignUp";
+import CourseWorkId from "../pages/CourseWorkId";
+import CourseWorks from "../pages/CourseWorks";
 
 export const privateRoutes = [
     {path: '/profile', element: <MyProfile/>},
@@ -16,6 +18,8 @@ export const publicRoutes = [
     {path: '/about', element: <About/>},
     {path: '/posts', element: <Posts/>},
     {path: '/posts/:id', element: <PostIdPage/>},
+    {path: '/courseworks', element: <CourseWorks/>},
+    {path: '/courseworks/:id', element: <CourseWorkId/>},
     {path: '/teachers', element: <Teachers/>},
     {path: '/*', element: <MainPage/>},
 ]

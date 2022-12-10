@@ -1,11 +1,11 @@
 import React,{useState} from 'react';
 import {useContext} from "react";
 import {AuthContext} from "../context";
-import {useHref, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import MyInput from "../components/UI/input/MyInput";
+import MySelect from "../components/UI/MySelect/MySelect"
 import AuthService from "../services/AuthService";
-import {Button, Select} from "@mui/material";
-
+import {Button, Checkbox, FormControlLabel, FormGroup} from "@mui/material";
 const SignUp = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext)
     const [email,setEmail] = useState("")
@@ -15,9 +15,18 @@ const SignUp = () => {
     const [name, setName] = useState("")
     const [patronymic, setPatronymic] = useState("")
 
-    const options = ['1', '2', '3', '4', '5']
+    const [checked1, setChecked1] = useState(true);
+    const [checked2, setChecked2] = useState(true);
 
-    const [selectedOption, setSelectedOption] = useState("");
+    function handleChange1(e) {
+        setChecked1(e.target.checked)
+        setChecked2(!e.target.checked)
+    }
+
+    function handleChange2(e) {
+        setChecked1(!e.target.checked)
+        setChecked2(e.target.checked)
+    }
 
     const navigate = useNavigate()
 
@@ -62,6 +71,33 @@ const SignUp = () => {
             <form onSubmit={signup} method="post">
                 <MyInput
                     required
+                    id="surname"
+                    name="surname"
+                    type="surname"
+                    value={surname}
+                    placeholder="Фамилия"
+                    onChange={onChangeSurname}
+                />
+                <MyInput
+                    required
+                    id="name"
+                    name="name"
+                    type="name"
+                    value={name}
+                    placeholder="Имя"
+                    onChange={onChangeName}
+                />
+                <MyInput
+                    required
+                    id="patronymic"
+                    name="patronymic"
+                    type="patronymic"
+                    value={patronymic}
+                    placeholder="Отчество"
+                    onChange={onChangePatronymic}
+                />
+                <MyInput
+                    required
                     type="email"
                     pattern=".+@student\.spbu\.ru"
                     placeholder="st******@student.spbu.ru"
@@ -87,44 +123,41 @@ const SignUp = () => {
                     value={passwordRepeat}
                     onChange={onChangeConfirmationPassword}
                 />
-                <MyInput
-                    required
-                    id="name"
-                    name="surname"
-                    type="surname"
-                    value={name}
-                    placeholder="Фамилия"
-                    onChange={onChangeSurname}
-                />
-                <MyInput
-                    required
-                    id="name"
-                    name="name"
-                    type="name"
-                    value={name}
-                    placeholder="Имя"
-                    onChange={onChangeName}
-                />
-                <MyInput
-                    required
-                    id="name"
-                    name="patronymic"
-                    type="patronymic"
-                    value={name}
-                    placeholder="Отчество"
-                    onChange={onChangePatronymic}
-                />
-                <Select
-                    options={options}
-                    value={selectedOption}
-                    onChange={e => setSelectedOption(e.target.value)}
-                />
+                <MySelect/>
                 <MyInput
                     id="department"
                     type="text"
                     placeholder="Направление"
                     required
                 />
+                <FormGroup>
+                    <FormControlLabel
+                        control={<Checkbox/>}
+                        checked={checked1}
+                        onChange={handleChange1}
+                        label="Студент"
+                        sx={{
+                            width: "40vw",
+                            marginTop: "5px",
+                            fontSize: "medium",
+                            color: "gray",
+                            height: "20px",
+                        }}
+                    />
+                    <FormControlLabel
+                        control={<Checkbox/>}
+                        checked={checked2}
+                        onChange={handleChange2}
+                        label="Преподаватель"
+                        sx={{
+                            width: "40vw",
+                            marginTop: "5px",
+                            fontSize: "medium",
+                            color: "gray",
+                            height: "20px",
+                        }}
+                    />
+                </FormGroup>
                 <Button
                     type="submit"
                     sx={{

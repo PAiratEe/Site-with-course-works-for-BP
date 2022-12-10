@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const back_URL = "http://localhost:7999"
+const back_URL = "http://localhost:8080"
 
 class AuthService {
 
@@ -18,16 +18,16 @@ class AuthService {
             });
     }
 
-    register(email, password)
+    register(surname, name, patronymic, email, password, department)
     {
         return axios.post(back_URL + "/register", {
+            "surname": surname,
+            "name": name,
+            "patronymic": patronymic,
             "email": email,
             "password": password,
-            "surname": "Korolyov",
-            "name": "Artyom",
-            "patronymic": "Sergeevich",
             "course": "1",
-            "department": "ПМИ"
+            "department": department
         })
 
     }
