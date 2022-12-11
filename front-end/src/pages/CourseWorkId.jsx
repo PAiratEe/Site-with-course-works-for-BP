@@ -25,15 +25,13 @@ const CourseWorkIdPAge = () => {
                 <h1>Загружаю...</h1>
                 :
                 <div>
-                    {/*<h1 style={{textAlign: "left"}}>{post.id}. {post.title}</h1>*/}
-                    {/*<div>{post.body}</div>*/}
                     <table>
                         <tbody>
                         <tr>
                             <td className="nav">
                                 <div className="nav_div">
                                     <ul style={{marginTop: "20px"}}>
-                                        <li><a href="theme">
+                                        <li><a href="#theme">
                                             <Button
                                                 id="basic-button"
                                                 sx={{
