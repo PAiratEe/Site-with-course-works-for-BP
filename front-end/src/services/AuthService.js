@@ -46,7 +46,6 @@ class AuthService {
             "department": "ПМИ"
 >>>>>>> origin/front-end
         })
-
     }
 }
 

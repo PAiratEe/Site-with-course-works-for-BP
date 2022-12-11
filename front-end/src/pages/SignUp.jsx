@@ -3,7 +3,8 @@ import {useContext} from "react";
 import {AuthContext} from "../context";
 import {Form, useNavigate} from "react-router-dom";
 import MyInput from "../components/UI/input/MyInput";
-import {Button} from "@mui/material";
+import AuthService from "../services/AuthService";
+import {Button, TextField} from "@mui/material";
 
 const SignUp = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext)
@@ -36,9 +37,16 @@ const SignUp = () => {
                     id="PasswordConfirm"
                     type="password"
                     placeholder="Повторите пароль"
-                    required
-                />
-                <Button>Зарегистрироваться</Button>
+                    required                />
+                <MyInput
+                    id="name"
+                    name="name"
+                    type="name"
+                    value={name}
+                    placeholder="Имя"
+                    onChange = {onChangeName}
+                    />
+                <Button type="submit">Зарегистрироваться</Button>
             </form>
         </div>
     );
