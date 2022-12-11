@@ -2,7 +2,7 @@ import React from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import {Button} from "@mui/material";
 
-const PostItem = (props) => {
+const WorkItem = (props) => {
     const router = useNavigate()
     return (
         <Button
@@ -21,14 +21,14 @@ const PostItem = (props) => {
                 textTransform: "capitalize",
             }}
             className="post"
-            onClick={() => router(`/posts/${props.post.id}`)}
+            onClick={() => router(`/courseworks/${props.coursework.id}`)}
         >
             <div>
-                <h2 style={{textAlign: "left", color: "white", textShadow: "0px 0px 3px gray"}}>{props.post.title}</h2>
-                <pre>{props.post.body}</pre>
+                <h2 style={{textAlign: "left", color: "white", textShadow: "0px 0px 3px gray"}}>{props.coursework.title}</h2>
+                <pre>{props.coursework.body}</pre>
             </div>
         </Button>
     );
 };
 
-export default PostItem;
+export default WorkItem;

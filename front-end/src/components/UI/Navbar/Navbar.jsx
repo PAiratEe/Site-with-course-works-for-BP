@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
         isAuth
             ?
-            <div className={classes.navbar}>
+            <div className={classes.navbar} id="myNavbar">
                 <div className={classes.navbar__links}>
                     <Link className={classes.link} to="/">
                         <Button
@@ -29,7 +29,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -43,7 +43,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -57,13 +57,27 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
                             }}
                         >
                             Список преподавателей
+                        </Button>
+                    </Link>
+                    <Link className={classes.link} to="/courseworks">
+                        <Button
+                            id="basic-button"
+                            sx={{
+                                color: "whitesmoke",
+                                textShadow: "0px 0px 3px gray",
+                                fontSize: "18px",
+                                fontFamily: "Microsoft Sans Serif",
+                                textTransform: "capitalize",
+                            }}
+                        >
+                            Список научных работ
                         </Button>
                     </Link>
                     <BasicMenu/>
@@ -87,7 +101,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -101,7 +115,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -115,7 +129,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -129,7 +143,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
@@ -143,7 +157,7 @@ const Navbar = () => {
                             id="basic-button"
                             sx={{
                                 color: "whitesmoke",
-                                // textShadow: "1px 1px 8px black",
+                                textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
                                 fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
