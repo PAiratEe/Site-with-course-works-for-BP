@@ -8,13 +8,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 public class signUpController {
 
     @Autowired
     StudentRepository studentRepository;
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody SignUpRequest signUpRequest) {
+
+        if (studentRepository.existsStudentByEmail(signUpRequest.getEmail())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body("Этот логин уже занят");
+        }
+
         Student student = new Student();
         student.setName(signUpRequest.getName());
         student.setCourse(Integer.parseInt(signUpRequest.getCourse()));
@@ -22,6 +30,7 @@ public class signUpController {
         student.setSurname(signUpRequest.getSurname());
         student.setPatronymic(signUpRequest.getPatronymic());
         student.setPassword(signUpRequest.getPassword());
+        studentRepository.save(student);
         return ResponseEntity.ok("Пользователь был успешно зарегистрирован");
     }
 }

@@ -29,7 +29,6 @@ class AuthService {
             "course": "1",
             "department": department
         })
-
     }
 }
 
