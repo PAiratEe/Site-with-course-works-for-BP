@@ -6,6 +6,8 @@
     justify-content: space-around;
     padding: 0 15px;
     background: #87AADF;
+    position: sticky;
+    top: 0;
 }
 
 .navbar__links {
