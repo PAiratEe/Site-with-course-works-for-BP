@@ -5,17 +5,26 @@ import Login from "../pages/Login";
 import MainPage from "../pages/MainPage";
 import Teachers from "../pages/Teachers";
 import MyProfile from "../pages/MyProfile";
+import SignUp from "../pages/SignUp";
+import CourseWorkId from "../pages/CourseWorkId";
+import CourseWorks from "../pages/CourseWorks";
 
 export const privateRoutes = [
-    {path: '/posts/:id', element: <PostIdPage/>},
     {path: '/profile', element: <MyProfile/>},
 ]
 
 export const publicRoutes = [
     {path: '/', element: <MainPage/>},
-    {path: '/login', element: <Login/>},
     {path: '/about', element: <About/>},
     {path: '/posts', element: <Posts/>},
+    {path: '/posts/:id', element: <PostIdPage/>},
+    {path: '/courseworks', element: <CourseWorks/>},
+    {path: '/courseworks/:id', element: <CourseWorkId/>},
     {path: '/teachers', element: <Teachers/>},
-    {path: '/*', element: <Login/>},
+    {path: '/*', element: <MainPage/>},
+]
+
+export const logRoutes = [
+    {path: '/login', element: <Login/>},
+    {path: '/register', element: <SignUp/>},
 ]

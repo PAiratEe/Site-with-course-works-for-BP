@@ -36,14 +36,11 @@ export default function BasicMenu() {
                 onClick={handleClick}
                 sx={{
                     color: "whitesmoke",
-                    textShadow: "1px 1px 8px black",
+                    textShadow: "0px 0px 3px gray",
                     fontSize: "18px",
                     fontFamily: "Microsoft Sans Serif",
                     textTransform: "capitalize",
-                    marginTop: "-3px",
-                    marginLeft: "-10px",
-                    marginRight: "-10px",
-                    }}
+                }}
             >
                 {localStorage.getItem('auth')}
             </Button>
@@ -57,7 +54,7 @@ export default function BasicMenu() {
                 }}
                 sx={{
                     "& .MuiPaper-root":{
-                        backgroundColor:"lightblue"
+                        backgroundColor: "#87AADF"
                     }
                 }}
             >
@@ -65,7 +62,7 @@ export default function BasicMenu() {
                     onClick={() => nav("/profile")}
                     sx={{
                         color: "whitesmoke",
-                        textShadow: "1px 1px 8px black",
+                        textShadow: "0px 0px 3px gray",
                         fontSize: "18px",
                         fontFamily: "Microsoft Sans Serif",
                         textTransform: "capitalize",
@@ -77,7 +74,7 @@ export default function BasicMenu() {
                     onClick={logout}
                     sx={{
                         color: "whitesmoke",
-                        textShadow: "1px 1px 8px black",
+                        textShadow: "0px 0px 3px gray",
                         fontSize: "18px",
                         fontFamily: "Microsoft Sans Serif",
                         textTransform: "capitalize",

@@ -1,10 +1,10 @@
 import React from 'react';
-import PostItem from "./PostItem";
 import {useState} from "react";
 import {usePosts} from "./hooks/usePosts";
 import PostFilter from "./PostFilter";
+import WorkItem from "./WorkItem";
 
-const PostList = ({posts, title}) => {
+const WorkList = ({posts, title}) => {
 
     const [filter, setFilter] = useState({sort: '', query: ''})
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
@@ -24,10 +24,10 @@ const PostList = ({posts, title}) => {
         <div style={{width: "40vw"}}>
             <h1>{title}</h1>
             <PostFilter filter={filter} setFilter={setFilter}/>
-            {sortedAndSearchedPosts.map((post, index) =>
-                <PostItem number={index + 1} post={post} key={post.id}/>)}
+            {sortedAndSearchedPosts.map((coursework, index) =>
+                <WorkItem number={index + 1} coursework={coursework} key={coursework.id}/>)}
         </div>
     );
 };
 
-export default PostList;
+export default WorkList;
