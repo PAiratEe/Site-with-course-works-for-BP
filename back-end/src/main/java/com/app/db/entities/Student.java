@@ -11,19 +11,19 @@ public class Student{
     private Long studentId;
 
     @Column(name = "studentname")
-    private String StudentName;
+    private String studentName;
     @Column(name = "studentsurname")
-    private String StudentSurname;
+    private String studentSurname;
     @Column(name = "studentpatronymic")
-    private String StudentPatronymic;
+    private String studentPatronymic;
     @Column(name = "studentemail")
-    private String StudentEmail;
+    private String studentEmail;
 
     @Column(name = "studentcoursenumber")
-    private Integer StudentCourseNumber;
+    private Integer studentCourseNumber;
 
     @Column(name = "studentcoursename")
-    private String StudentCourseName;
+    private String studentCourseName;
     @Column(name = "studentpassword")
     private String password;
 
@@ -46,23 +46,23 @@ public class Student{
     }
 
     public String getStudentName() {
-        return this.StudentName;
+        return this.studentName;
     }
 
     public String getStudentSurname() {
-        return this.StudentSurname;
+        return this.studentSurname;
     }
 
     public String getStudentPatronymic() {
-        return this.StudentPatronymic;
+        return this.studentPatronymic;
     }
 
     public String getStudentEmail() {
-        return this.StudentEmail;
+        return this.studentEmail;
     }
 
     public Integer getStudentCourseNumber() {
-        return this.StudentCourseNumber;
+        return this.studentCourseNumber;
     }
 
     public void setId(Long id) {
@@ -70,23 +70,23 @@ public class Student{
     }
 
     public void setStudentName(String studentName) {
-        this.StudentName = studentName;
+        this.studentName = studentName;
     }
 
     public void setStudentSurname(String studentSurname) {
-        this.StudentSurname = studentSurname;
+        this.studentSurname = studentSurname;
     }
 
     public void setStudentPatronymic(String studentPatronymic) {
-        this.StudentPatronymic = studentPatronymic;
+        this.studentPatronymic = studentPatronymic;
     }
 
     public void setStudentEmail(String studentEmail) {
-        this.StudentEmail = studentEmail;
+        this.studentEmail = studentEmail;
     }
 
     public void setStudentCourseNumber(Integer studentCourseNumber) {
-        this.StudentCourseNumber = studentCourseNumber;
+        this.studentCourseNumber = studentCourseNumber;
     }
 
     public Department getDepartment() {
@@ -122,10 +122,10 @@ public class Student{
     }
 
     public String getStudentCourseName() {
-        return this.StudentCourseName;
+        return this.studentCourseName;
     }
 
     public void setStudentCourseName(String StudentCourseName) {
-        this.StudentCourseName = StudentCourseName;
+        this.studentCourseName = StudentCourseName;
     }
 }

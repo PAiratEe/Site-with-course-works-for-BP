@@ -20,6 +20,11 @@ public class signUpController {
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody SignUpRequest signUpRequest) {
 
+        if (studentRepository.existsByStudentEmail(signUpRequest.getEmail())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body("Этот логин уже занят");
+        }
 
         Student student = new Student();
         student.setStudentName(signUpRequest.getName());
