@@ -57,7 +57,7 @@ const SignUp = () => {
 
     function signup(e) {
         e.preventDefault()
-        AuthService.register(email,password).then(response => {
+        AuthService.register(surname,name,patronymic,email,password,"ПМИ").then(response => {
                 setIsAuth(true)
                 localStorage.setItem('auth','Airat')
                 navigate(-1)
@@ -80,7 +80,7 @@ const SignUp = () => {
                 />
                 <MyInput
                     required
-                    id="name"
+                    id= "name"
                     name="name"
                     type="name"
                     value={name}
