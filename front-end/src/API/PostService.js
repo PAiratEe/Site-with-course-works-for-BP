@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const back_url = "http://localhost:7998"
+
 export default class PostService {
     static async getAll() {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -7,7 +9,7 @@ export default class PostService {
     }
 
     static async getById(id) {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
-        return response
+        const response = await axios.get("http://localhost:7998/getInfoAboutCourseWork?id=1")
+        return response.data
     }
 }
