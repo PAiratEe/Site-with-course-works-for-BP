@@ -9,7 +9,7 @@ public class Student{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "studentid")
-    private Long studentId;
+    private Integer studentId;
 
     @Column(name = "studentname")
     private String studentName;
@@ -42,7 +42,7 @@ public class Student{
     private EducationProgramm educationProgramm;
 
 
-    public Long getId() {
+    public Integer getId() {
         return this.studentId;
     }
 
@@ -66,7 +66,7 @@ public class Student{
         return this.studentCourseNumber;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.studentId = id;
     }
 

@@ -9,7 +9,7 @@ public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "professorid")
-    private Long professorId;
+    private Integer professorId;
 
     @Column(name = "professorname")
     private String ProfessorName;
@@ -33,7 +33,7 @@ public class Professor {
     private Department department;
 
 
-    public Long getId() {
+    public Integer getId() {
         return this.professorId;
     }
 
@@ -57,7 +57,7 @@ public class Professor {
         return this.ProfessorPost;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.professorId = id;
     }
 

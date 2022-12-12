@@ -9,12 +9,12 @@ public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "departmentid" )
-    private Long departmentId;
+    private Integer departmentId;
 
     @Column(name = "departmentname")
     private String departmentName;
 
-    public Long getId() {
+    public Integer getId() {
         return this.departmentId;
     }
 
@@ -22,7 +22,7 @@ public class Department {
         return this.departmentName;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.departmentId = id;
     }
 

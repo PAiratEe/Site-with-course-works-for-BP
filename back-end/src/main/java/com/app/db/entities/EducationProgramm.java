@@ -8,12 +8,12 @@ public class EducationProgramm {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "educationprogrammid")
-    private Long EducationProgrammId;
+    private Integer EducationProgrammId;
 
     @Column(name = "educationprogrammname")
     private String EducationProgrammName;
 
-    public Long getEducationProgrammId() {
+    public Integer getEducationProgrammId() {
         return this.EducationProgrammId;
     }
 
@@ -21,7 +21,7 @@ public class EducationProgramm {
         return this.EducationProgrammName;
     }
 
-    public void setEducationProgrammId(Long educationProgrammId) {
+    public void setEducationProgrammId(Integer educationProgrammId) {
         this.EducationProgrammId = educationProgrammId;
     }
 

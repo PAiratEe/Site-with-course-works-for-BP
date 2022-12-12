@@ -10,7 +10,7 @@ public class CourseWork {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "courseworkid")
-    private Long courseWorkId;
+    private Integer courseWorkId;
 
     @Column(name = "title")
     private String title;
@@ -21,7 +21,7 @@ public class CourseWork {
     private String ShortDescription;
 
     @Column(name = "longdescription")
-    private String Description;
+    private String longDescription;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "departmentId", referencedColumnName = "departmentId")
@@ -31,7 +31,7 @@ public class CourseWork {
     @JoinColumn(name = "professorid", referencedColumnName = "professorId")
     private Professor professor;
 
-    public Long getCourseWorkId() {
+    public Integer getCourseWorkId() {
         return this.courseWorkId;
     }
 
@@ -43,7 +43,7 @@ public class CourseWork {
         return this.requirements;
     }
 
-    public void setCourseWorkId(Long courseWorkId) {
+    public void setCourseWorkId(Integer courseWorkId) {
         this.courseWorkId = courseWorkId;
     }
 
@@ -75,15 +75,15 @@ public class CourseWork {
         return this.ShortDescription;
     }
 
-    public String getDescription() {
-        return this.Description;
+    public String getLongDescription() {
+        return this.longDescription;
     }
 
     public void setShortDescription(String ShortDescription) {
         this.ShortDescription = ShortDescription;
     }
 
-    public void setDescription(String Description) {
-        this.Description = Description;
+    public void setLongDescription(String Description) {
+        this.longDescription = Description;
     }
 }
