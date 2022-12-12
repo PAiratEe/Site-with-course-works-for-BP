@@ -2,7 +2,6 @@ package com.app.db.entities;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "Student")
 public class Student{
@@ -11,74 +10,83 @@ public class Student{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long studentId;
 
-    private String name;
-    private String surname;
-    private String patronymic;
-    private String email;
-    private Integer course;
+    @Column(name = "studentname")
+    private String StudentName;
+    @Column(name = "studentsurname")
+    private String StudentSurname;
+    @Column(name = "studentpatronymic")
+    private String StudentPatronymic;
+    @Column(name = "studentemail")
+    private String StudentEmail;
 
+    @Column(name = "studentcoursenumber")
+    private Integer StudentCourseNumber;
+
+    @Column(name = "studentcoursename")
+    private String StudentCourseName;
+    @Column(name = "studentpassword")
     private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "departament", referencedColumnName = "departmentId")
+    @JoinColumn(name = "studentdepartment", referencedColumnName = "departmentId")
     private Department department;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "coursework_id", referencedColumnName = "courseworkId")
+    @JoinColumn(name = "studentCourseWork", referencedColumnName = "courseworkId")
     private CourseWork courseWork;
 
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "educationprogramm", referencedColumnName = "id")
-    private EducationalProgramm educationalProgramm;
+    @JoinColumn(name = "StudentEducationProgramm", referencedColumnName = "EducationProgrammId")
+    private EducationProgramm educationProgramm;
 
 
     public Long getId() {
         return this.studentId;
     }
 
-    public String getName() {
-        return this.name;
+    public String getStudentName() {
+        return this.StudentName;
     }
 
-    public String getSurname() {
-        return this.surname;
+    public String getStudentSurname() {
+        return this.StudentSurname;
     }
 
-    public String getPatronymic() {
-        return this.patronymic;
+    public String getStudentPatronymic() {
+        return this.StudentPatronymic;
     }
 
-    public String getEmail() {
-        return this.email;
+    public String getStudentEmail() {
+        return this.StudentEmail;
     }
 
-    public Integer getCourse() {
-        return this.course;
+    public Integer getStudentCourseNumber() {
+        return this.StudentCourseNumber;
     }
 
     public void setId(Long id) {
         this.studentId = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStudentName(String studentName) {
+        this.StudentName = studentName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setStudentSurname(String studentSurname) {
+        this.StudentSurname = studentSurname;
     }
 
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
+    public void setStudentPatronymic(String studentPatronymic) {
+        this.StudentPatronymic = studentPatronymic;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setStudentEmail(String studentEmail) {
+        this.StudentEmail = studentEmail;
     }
 
-    public void setCourse(Integer course) {
-        this.course = course;
+    public void setStudentCourseNumber(Integer studentCourseNumber) {
+        this.StudentCourseNumber = studentCourseNumber;
     }
 
     public Department getDepartment() {
@@ -89,8 +97,8 @@ public class Student{
         return this.courseWork;
     }
 
-    public EducationalProgramm getEducationalProgramm() {
-        return this.educationalProgramm;
+    public EducationProgramm getEducationProgramm() {
+        return this.educationProgramm;
     }
 
     public void setDepartment(Department department) {
@@ -101,8 +109,8 @@ public class Student{
         this.courseWork = courseWork;
     }
 
-    public void setEducationalProgramm(EducationalProgramm educationalProgramm) {
-        this.educationalProgramm = educationalProgramm;
+    public void setEducationProgramm(EducationProgramm educationProgramm) {
+        this.educationProgramm = educationProgramm;
     }
 
     public String getPassword() {
@@ -111,5 +119,13 @@ public class Student{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getStudentCourseName() {
+        return this.StudentCourseName;
+    }
+
+    public void setStudentCourseName(String StudentCourseName) {
+        this.StudentCourseName = StudentCourseName;
     }
 }

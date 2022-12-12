@@ -3,13 +3,15 @@ package com.app.db.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Departments")
+@Table(name = "department")
 public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "departmentId" )
     private Long departmentId;
 
+    @Column(name = "departmentName")
     private String departmentName;
 
     public Long getId() {

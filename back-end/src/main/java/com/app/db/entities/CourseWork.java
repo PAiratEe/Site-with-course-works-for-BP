@@ -1,6 +1,7 @@
 package com.app.db.entities;
 
 import jakarta.persistence.*;
+
 @Entity
 @Table(name = "CourseWork")
 public class CourseWork {
@@ -11,8 +12,12 @@ public class CourseWork {
     private String title;
     private String requirements;
 
+    private String ShortDescription;
+
+    private String Description;
+
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "departmentsId", referencedColumnName = "departmentId")
+    @JoinColumn(name = "departmentId", referencedColumnName = "departmentId")
     private Department department;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -57,5 +62,21 @@ public class CourseWork {
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
+    }
+
+    public String getShortDescription() {
+        return this.ShortDescription;
+    }
+
+    public String getDescription() {
+        return this.Description;
+    }
+
+    public void setShortDescription(String ShortDescription) {
+        this.ShortDescription = ShortDescription;
+    }
+
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 }

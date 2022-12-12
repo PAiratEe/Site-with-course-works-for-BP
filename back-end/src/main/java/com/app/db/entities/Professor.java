@@ -1,22 +1,35 @@
 package com.app.db.entities;
 
 import jakarta.persistence.*;
+
 @Entity
 @Table(name = "Professor")
 public class Professor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "professorid")
     private Long professorId;
 
-    private String name;
-    private String surname;
-    private String patronymic;
-    private String email;
-    private String post;
+    @Column(name = "professorname")
+    private String ProfessorName;
+
+    @Column(name = "professorsecondname")
+    private String ProfessorSecondName;
+
+    @Column(name = "professorpatronymic")
+    private String ProfessorPatronymic;
+    @Column(name = "professoremail")
+    private String ProfessorEmail;
+
+    @Column(name = "professorpost")
+    private String ProfessorPost;
+
+    @Column(name = "professorpassword")
+    private String ProfessorPassword;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "departmentsid", referencedColumnName = "departmentId")
+    @JoinColumn(name = "departmentId", referencedColumnName = "departmentId")
     private Department department;
 
 
@@ -24,48 +37,48 @@ public class Professor {
         return this.professorId;
     }
 
-    public String getName() {
-        return this.name;
+    public String getProfessorName() {
+        return this.ProfessorName;
     }
 
-    public String getSurname() {
-        return this.surname;
+    public String getProfessorSecondName() {
+        return this.ProfessorSecondName;
     }
 
-    public String getPatronymic() {
-        return this.patronymic;
+    public String getProfessorPatronymic() {
+        return this.ProfessorPatronymic;
     }
 
-    public String getEmail() {
-        return this.email;
+    public String getProfessorEmail() {
+        return this.ProfessorEmail;
     }
 
-    public String getPost() {
-        return this.post;
+    public String getProfessorPost() {
+        return this.ProfessorPost;
     }
 
     public void setId(Long id) {
         this.professorId = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProfessorName(String professorName) {
+        this.ProfessorName = professorName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setProfessorSecondName(String professorSecondName) {
+        this.ProfessorSecondName = professorSecondName;
     }
 
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
+    public void setProfessorPatronymic(String professorPatronymic) {
+        this.ProfessorPatronymic = professorPatronymic;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setProfessorEmail(String professorEmail) {
+        this.ProfessorEmail = professorEmail;
     }
 
-    public void setPost(String post) {
-        this.post = post;
+    public void setProfessorPost(String professorPost) {
+        this.ProfessorPost = professorPost;
     }
 
     public Department getDepartment() {
@@ -74,5 +87,13 @@ public class Professor {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public String getProfessorPassword() {
+        return this.ProfessorPassword;
+    }
+
+    public void setProfessorPassword(String ProfessorPassword) {
+        this.ProfessorPassword = ProfessorPassword;
     }
 }
