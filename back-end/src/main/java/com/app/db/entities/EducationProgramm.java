@@ -7,10 +7,10 @@ import jakarta.persistence.*;
 public class EducationProgramm {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "EducationProgrammId")
+    @Column(name = "educationprogrammid")
     private Long EducationProgrammId;
 
-    @Column(name = "EducationProgrammName")
+    @Column(name = "educationprogrammname")
     private String EducationProgrammName;
 
     public Long getEducationProgrammId() {

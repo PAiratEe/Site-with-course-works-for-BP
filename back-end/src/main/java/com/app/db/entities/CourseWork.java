@@ -9,11 +9,15 @@ public class CourseWork {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long courseWorkId;
 
+    @Column(name = "title")
     private String title;
+    @Column(name = "requirements")
     private String requirements;
 
+    @Column(name = "shortdescription")
     private String ShortDescription;
 
+    @Column(name = "longdescription")
     private String Description;
 
     @OneToOne(cascade = CascadeType.ALL)

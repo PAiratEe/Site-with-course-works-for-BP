@@ -8,10 +8,10 @@ public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "departmentId" )
+    @Column(name = "departmentid" )
     private Long departmentId;
 
-    @Column(name = "departmentName")
+    @Column(name = "departmentname")
     private String departmentName;
 
     public Long getId() {
