@@ -31,6 +31,9 @@ public class CourseWork {
     @JoinColumn(name = "professorid", referencedColumnName = "professorId")
     private Professor professor;
 
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    private Tag_CourseWork courseworkid;
+
     public Long getCourseWorkId() {
         return this.courseWorkId;
     }
@@ -79,6 +82,8 @@ public class CourseWork {
         return this.Description;
     }
 
+    public Tag_CourseWork getCourseworkid() { return courseworkid; }
+
     public void setShortDescription(String ShortDescription) {
         this.ShortDescription = ShortDescription;
     }
@@ -86,4 +91,6 @@ public class CourseWork {
     public void setDescription(String Description) {
         this.Description = Description;
     }
+
+    public void setCourseworkid(Tag_CourseWork courseworkid) { this.courseworkid = courseworkid; }
 }
