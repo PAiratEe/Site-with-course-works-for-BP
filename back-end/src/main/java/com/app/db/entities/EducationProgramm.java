@@ -3,7 +3,7 @@ package com.app.db.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "EducationProgramm")
+@Table(name = "EducationProgramm",schema = "projectschema")
 public class EducationProgramm {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

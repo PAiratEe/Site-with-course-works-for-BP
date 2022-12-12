@@ -3,10 +3,13 @@ package com.app.db.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "CourseWork")
+@Table(name = "CourseWork",schema = "projectschema")
 public class CourseWork {
+
+    public CourseWork(){}
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "courseworkid")
     private Long courseWorkId;
 
     @Column(name = "title")
