@@ -20,16 +20,16 @@ public class Student{
     private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "departmentId", referencedColumnName = "studentId")
+    @JoinColumn(name = "departament", referencedColumnName = "departmentId")
     private Department department;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "courseWorkId", referencedColumnName = "studentId")
+    @JoinColumn(name = "coursework_id", referencedColumnName = "courseworkId")
     private CourseWork courseWork;
 
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id", referencedColumnName = "studentId")
+    @JoinColumn(name = "educationprogramm", referencedColumnName = "id")
     private EducationalProgramm educationalProgramm;
 
 
