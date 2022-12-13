@@ -24,8 +24,7 @@ const PostItem = (props) => {
             onClick={() => router(`/posts/${props.post.id}`)}
         >
             <div>
-                <h2 style={{textAlign: "left", color: "white", textShadow: "0px 0px 3px gray"}}>{props.post.title}</h2>
-                <pre>{props.post.body}</pre>
+                <h2 style={{textAlign: "left", color: "white", textShadow: "0px 0px 3px gray"}}>{props.post.departmentName}</h2>
             </div>
         </Button>
     );

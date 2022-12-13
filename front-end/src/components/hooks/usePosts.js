@@ -19,3 +19,11 @@ export const usePosts = (posts, sort, query) => {
 
     return sortedAndSearchedPosts;
 }
+
+export const useDepartments =(posts,sort,query)=>{
+    const sortedPosts = useSortedPosts(posts,sort);
+    const sortedAndSearchedPosts = useMemo(() => {
+        return sortedPosts.filter(post => post.departmentName.toLowerCase().includes(query.toLowerCase()))
+    }, [query, sortedPosts])
+    return sortedAndSearchedPosts;
+}

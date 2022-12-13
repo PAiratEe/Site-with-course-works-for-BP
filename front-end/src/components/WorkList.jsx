@@ -8,7 +8,7 @@ const WorkList = ({posts, title}) => {
 
     const [filter, setFilter] = useState({sort: '', query: ''})
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
-
+    console.log(posts)
     if (!sortedAndSearchedPosts.length) {
         return (
             <div style={{width: "40vw"}}>
@@ -25,7 +25,7 @@ const WorkList = ({posts, title}) => {
             <h1>{title}</h1>
             <PostFilter filter={filter} setFilter={setFilter}/>
             {sortedAndSearchedPosts.map((coursework, index) =>
-                <WorkItem number={index + 1} coursework={coursework} key={coursework.id}/>)}
+                <WorkItem number={index + 1} coursework={coursework} key={coursework.courseWorkId}/>)}
         </div>
     );
 };

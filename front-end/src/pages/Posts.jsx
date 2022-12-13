@@ -1,15 +1,15 @@
 import {useEffect, useState} from "react";
 import PostList from "./../components/PostList";
 import React from "react";
-import PostService from "./../API/PostService";
 import {useFetching} from "../components/hooks/useFetching";
+import DepartmentService from "../API/DepartmentService";
 
 const Posts = () => {
 
     const [posts, setPosts] = useState([])
     const [fetchPosts, isPostsLoading] = useFetching(async () => {
-        const posts = await PostService.getAll()
-        setPosts(posts)
+        const posts = await DepartmentService.getAll()
+        setPosts(posts.data)
     })
 
     useEffect(() => {

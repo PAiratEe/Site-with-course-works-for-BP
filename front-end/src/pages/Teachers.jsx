@@ -1,13 +1,13 @@
 import React from 'react';
 import {useEffect, useState} from "react";
 import {useFetching} from "../components/hooks/useFetching";
-import PostService from "../API/PostService";
+import CourseWorkService from "../API/CourseWorkService";
 import PostList from "../components/PostList";
 
 const Teachers = () => {
     const [teachers, setTeachers] = useState([])
     const [fetchTeachers, isTeachersLoading] = useFetching(async () => {
-        const teachers = await PostService.getAll()
+        const teachers = await CourseWorkService.getAll()
         setTeachers(teachers)
     })
 

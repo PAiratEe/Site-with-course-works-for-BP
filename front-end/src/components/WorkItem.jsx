@@ -21,7 +21,7 @@ const WorkItem = (props) => {
                 textTransform: "capitalize",
             }}
             className="post"
-            onClick={() => router(`/courseworks/${props.coursework.id}`)}
+            onClick={() => router(`/courseworks/${props.coursework.courseWorkId}`)}
         >
             <div>
                 <h2 style={{textAlign: "left", color: "white", textShadow: "0px 0px 3px gray"}}>{props.coursework.title}</h2>

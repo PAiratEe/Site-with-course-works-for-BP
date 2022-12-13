@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {useFetching} from "../components/hooks/useFetching";
-import PostService from "../API/PostService";
+import DepartmentService from "../API/DepartmentService";
 
 const PostIdPage = () => {
     const params = useParams()
     const [post, setPost] = useState({})
     const [fetchPostById, isLoading] = useFetching(async () => {
-        const response = await PostService.getById(params.id)
+        const response = await DepartmentService.getAll();
+        console.log(response)
         setPost(response.data)
     })
 
@@ -22,8 +23,7 @@ const PostIdPage = () => {
                 <h1>Загружаю...</h1>
                 :
                 <div>
-                    <h1 style={{textAlign: "left"}}>{post.id}. {post.title}</h1>
-                    <div>{post.body}</div>
+                    <h1 style={{textAlign: "left"}}></h1>
                 </div>
             }
         </div>

@@ -1,13 +1,13 @@
 import React from 'react';
 import PostItem from "./PostItem";
 import {useState} from "react";
-import {usePosts} from "./hooks/usePosts";
+import {useDepartments, usePosts} from "./hooks/usePosts";
 import PostFilter from "./PostFilter";
 
 const PostList = ({posts, title}) => {
 
     const [filter, setFilter] = useState({sort: '', query: ''})
-    const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
+    const sortedAndSearchedPosts = useDepartments(posts, filter.sort, filter.query)
 
     if (!sortedAndSearchedPosts.length) {
         return (

@@ -4,7 +4,7 @@ import {Button} from "@mui/material";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useFetching} from "../components/hooks/useFetching";
-import PostService from "../API/PostService";
+import CourseWorkService from "../API/CourseWorkService";
 
 const CourseWorkIdPAge = () => {
     const params = useParams()
@@ -21,7 +21,8 @@ const CourseWorkIdPAge = () => {
 
 
     const [fetchWorkById, isLoading] = useFetching(async () => {
-        const response = await PostService.getById(params.id)
+        console.log(params)
+        const response = await CourseWorkService.getById(params.id)
         setTitle(response.title)
         setDescription(response.description)
         setRequirements(response.requirements)
