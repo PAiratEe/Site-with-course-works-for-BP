@@ -5,6 +5,7 @@ import {useFetching} from "../components/hooks/useFetching";
 import PostService from "../API/PostService";
 import {useEffect, useState} from "react";
 import CourseWorkForm from "./CourseWorkForm";
+import CourseWorkService from "../API/CourseWorkService";
 
 
 const MyProfile = () => {
@@ -12,7 +13,7 @@ const MyProfile = () => {
     const router = useNavigate()
     const [works, setWorks] = useState([])
     const [fetchWorks, isWorksLoading] = useFetching(async () => {
-        const works = await PostService.getAll()
+        const works = await CourseWorkService.getAllCourseWorksByProfessorId(1)
         setWorks(works)
     })
 

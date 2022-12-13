@@ -4,18 +4,20 @@ import {useState} from "react";
 import courseWorkId from "./CourseWorkId";
 import {Button} from "@mui/material";
 import MyProfile from "./MyProfile";
+import CourseWorkService from "../API/CourseWorkService";
 
-const CourseWorkForm = ({create}) => {
+const CourseWorkForm = () => {
     const [work, setWork] = useState({title: '', requirements: '', shortDescription: '', longDescription: '', department: '', professor: ''})
-
+    // const []
     const addNewPost = (e) => {
         e.preventDefault()
 
-        const newCourseWork = {
-            ...work, id: courseWorkId
-        }
-        create(newCourseWork)
-        setWork({title: '', requirements: '', shortDescription: '', longDescription: '', department: '', professor: ''})
+        //const newCourseWork = {
+        //    ...work, id: courseWorkId
+        //}
+        // create(newCourseWork)
+        // setWork({title: '', requirements: '', shortDescription: '', longDescription: '', department: '', professor: ''})
+        CourseWorkService.sendNewCourseWork(work.title,work.shortDescription,work.longDescription,work.requirements)
     }
 
     return (

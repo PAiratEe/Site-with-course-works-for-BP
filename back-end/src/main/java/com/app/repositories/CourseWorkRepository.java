@@ -12,7 +12,7 @@ import java.util.List;
 public interface CourseWorkRepository extends JpaRepository<CourseWork,Integer> {
     CourseWork findByCourseWorkId(Integer id);
 
-    Boolean existsByTitle(String title);
+    Boolean existsCourseWorkByTitle(String title);
 
     List<CourseWork> findByCourseWorkIdIn(Collection<Integer> ids);
 
