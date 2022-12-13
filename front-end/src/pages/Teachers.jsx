@@ -3,11 +3,14 @@ import {useEffect, useState} from "react";
 import {useFetching} from "../components/hooks/useFetching";
 import CourseWorkService from "../API/CourseWorkService";
 import PostList from "../components/PostList";
+import ProfessorService from "../API/ProfessorService";
+import TeacherList from "../components/TeacherList";
 
 const Teachers = () => {
     const [teachers, setTeachers] = useState([])
     const [fetchTeachers, isTeachersLoading] = useFetching(async () => {
-        const teachers = await CourseWorkService.getAll()
+        const teachers = await ProfessorService.getAll()
+        console.log(teachers)
         setTeachers(teachers)
     })
 
@@ -19,7 +22,7 @@ const Teachers = () => {
         <div className="App">
             {isTeachersLoading
                 ? <h2>Загружаю...</h2>
-                : <PostList posts={teachers} title={'Список преподавателей'}/>
+                : <TeacherList posts={teachers} title={'Список преподавателей'}/>
             }
         </div>
     );

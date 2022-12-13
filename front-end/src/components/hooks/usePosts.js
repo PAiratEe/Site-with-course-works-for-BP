@@ -27,3 +27,12 @@ export const useDepartments =(posts,sort,query)=>{
     }, [query, sortedPosts])
     return sortedAndSearchedPosts;
 }
+
+export const useProfessor = (posts,sort,query)=>{
+    const sortedPosts = useSortedPosts(posts,sort)
+    const sortedAndSearchedPosts = useMemo(() => {
+        return sortedPosts.filter(post =>
+            (post.professorSecondName).toLowerCase().includes(query.toLowerCase()))
+    }, [query, sortedPosts])
+    return sortedAndSearchedPosts;
+}
