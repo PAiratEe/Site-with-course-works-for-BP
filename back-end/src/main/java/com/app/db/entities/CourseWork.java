@@ -18,7 +18,7 @@ public class CourseWork {
     private String requirements;
 
     @Column(name = "shortdescription")
-    private String ShortDescription;
+    private String shortDescription;
 
     @Column(name = "longdescription")
     private String longDescription;
@@ -72,7 +72,7 @@ public class CourseWork {
     }
 
     public String getShortDescription() {
-        return this.ShortDescription;
+        return this.shortDescription;
     }
 
     public String getLongDescription() {
@@ -80,7 +80,7 @@ public class CourseWork {
     }
 
     public void setShortDescription(String ShortDescription) {
-        this.ShortDescription = ShortDescription;
+        this.shortDescription = ShortDescription;
     }
 
     public void setLongDescription(String Description) {

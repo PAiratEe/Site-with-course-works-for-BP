@@ -17,7 +17,7 @@ public class currentCourseWorkController {
 
     @GetMapping("/getInfoAboutCourseWork")
     public ResponseEntity<?> getInfoAboutSelectedCourseWork(@RequestParam String id){
-        var courseWork =courseWorkRepository.findByCourseWorkId((id));
+        var courseWork =courseWorkRepository.findByCourseWorkId(Integer.parseInt(id));
         if(courseWork == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
