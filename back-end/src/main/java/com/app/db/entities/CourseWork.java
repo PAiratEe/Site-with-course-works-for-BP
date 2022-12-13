@@ -3,14 +3,14 @@ package com.app.db.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "CourseWork",schema = "projectschema")
+@Table(name = "coursework",schema = "projectschema")
 public class CourseWork {
 
     public CourseWork(){}
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "courseworkid")
-    private Long courseWorkId;
+    private Integer courseWorkId;
 
     @Column(name = "title")
     private String title;
@@ -18,10 +18,10 @@ public class CourseWork {
     private String requirements;
 
     @Column(name = "shortdescription")
-    private String ShortDescription;
+    private String shortDescription;
 
     @Column(name = "longdescription")
-    private String Description;
+    private String longDescription;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "departmentId", referencedColumnName = "departmentId")
@@ -31,7 +31,7 @@ public class CourseWork {
     @JoinColumn(name = "professorid", referencedColumnName = "professorId")
     private Professor professor;
 
-    public Long getCourseWorkId() {
+    public Integer getCourseWorkId() {
         return this.courseWorkId;
     }
 
@@ -43,7 +43,7 @@ public class CourseWork {
         return this.requirements;
     }
 
-    public void setCourseWorkId(Long courseWorkId) {
+    public void setCourseWorkId(Integer courseWorkId) {
         this.courseWorkId = courseWorkId;
     }
 
@@ -72,18 +72,18 @@ public class CourseWork {
     }
 
     public String getShortDescription() {
-        return this.ShortDescription;
+        return this.shortDescription;
     }
 
-    public String getDescription() {
-        return this.Description;
+    public String getLongDescription() {
+        return this.longDescription;
     }
 
     public void setShortDescription(String ShortDescription) {
-        this.ShortDescription = ShortDescription;
+        this.shortDescription = ShortDescription;
     }
 
-    public void setDescription(String Description) {
-        this.Description = Description;
+    public void setLongDescription(String Description) {
+        this.longDescription = Description;
     }
 }

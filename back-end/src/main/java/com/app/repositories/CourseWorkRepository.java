@@ -4,8 +4,15 @@ import com.app.db.entities.CourseWork;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
+import java.util.List;
+
 
 @Repository
-public interface CourseWorkRepository extends JpaRepository<CourseWork,Long> {
-    CourseWork findByCourseWorkId(String id);
+public interface CourseWorkRepository extends JpaRepository<CourseWork,Integer> {
+    CourseWork findByCourseWorkId(Integer id);
+
+    Boolean existsByTitle(String title);
+
+    List<CourseWork> findByCourseWorkIdIn(Collection<Integer> ids);
 }

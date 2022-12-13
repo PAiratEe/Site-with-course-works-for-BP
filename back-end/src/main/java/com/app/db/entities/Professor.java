@@ -3,82 +3,82 @@ package com.app.db.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Professor",schema = "projectschema")
+@Table(name = "professor",schema = "projectschema")
 public class Professor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "professorid")
-    private Long professorId;
+    private Integer professorId;
 
     @Column(name = "professorname")
-    private String ProfessorName;
+    private String professorName;
 
     @Column(name = "professorsecondname")
-    private String ProfessorSecondName;
+    private String professorSecondName;
 
     @Column(name = "professorpatronymic")
-    private String ProfessorPatronymic;
+    private String professorPatronymic;
     @Column(name = "professoremail")
-    private String ProfessorEmail;
+    private String professorEmail;
 
     @Column(name = "professorpost")
-    private String ProfessorPost;
+    private String professorPost;
 
     @Column(name = "professorpassword")
-    private String ProfessorPassword;
+    private String professorPassword;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "departmentId", referencedColumnName = "departmentId")
     private Department department;
 
 
-    public Long getId() {
+    public Integer getId() {
         return this.professorId;
     }
 
     public String getProfessorName() {
-        return this.ProfessorName;
+        return this.professorName;
     }
 
     public String getProfessorSecondName() {
-        return this.ProfessorSecondName;
+        return this.professorSecondName;
     }
 
     public String getProfessorPatronymic() {
-        return this.ProfessorPatronymic;
+        return this.professorPatronymic;
     }
 
     public String getProfessorEmail() {
-        return this.ProfessorEmail;
+        return this.professorEmail;
     }
 
     public String getProfessorPost() {
-        return this.ProfessorPost;
+        return this.professorPost;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.professorId = id;
     }
 
     public void setProfessorName(String professorName) {
-        this.ProfessorName = professorName;
+        this.professorName = professorName;
     }
 
     public void setProfessorSecondName(String professorSecondName) {
-        this.ProfessorSecondName = professorSecondName;
+        this.professorSecondName = professorSecondName;
     }
 
     public void setProfessorPatronymic(String professorPatronymic) {
-        this.ProfessorPatronymic = professorPatronymic;
+        this.professorPatronymic = professorPatronymic;
     }
 
     public void setProfessorEmail(String professorEmail) {
-        this.ProfessorEmail = professorEmail;
+        this.professorEmail = professorEmail;
     }
 
     public void setProfessorPost(String professorPost) {
-        this.ProfessorPost = professorPost;
+        this.professorPost = professorPost;
     }
 
     public Department getDepartment() {
@@ -90,10 +90,10 @@ public class Professor {
     }
 
     public String getProfessorPassword() {
-        return this.ProfessorPassword;
+        return this.professorPassword;
     }
 
     public void setProfessorPassword(String ProfessorPassword) {
-        this.ProfessorPassword = ProfessorPassword;
+        this.professorPassword = ProfessorPassword;
     }
 }
