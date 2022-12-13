@@ -14,6 +14,7 @@ const SignUp = () => {
     const [surname, setSurname] = useState("")
     const [name, setName] = useState("")
     const [patronymic, setPatronymic] = useState("")
+    const [department, setDepartment] = useState("")
 
     const [checked1, setChecked1] = useState(true);
     const [checked2, setChecked2] = useState(false);
@@ -54,10 +55,14 @@ const SignUp = () => {
         setPatronymic(e.target.value)
     }
 
+    function onChangeDepartment(e) {
+        setDepartment(e.target.value)
+    }
+
 
     function signup(e) {
         e.preventDefault()
-        AuthService.register(email,password).then(response => {
+        AuthService.register(name, email).then(response => {
                 setIsAuth(true)
                 localStorage.setItem('auth','Airat')
                 navigate(-1)
@@ -116,6 +121,7 @@ const SignUp = () => {
                     onChange={onChangePassword}
                 />
                 <MyInput
+                    required
                     id="passwordRepeat"
                     placeholder="Повторите пароль"
                     name="passwordRepeat"
@@ -124,10 +130,12 @@ const SignUp = () => {
                     onChange={onChangeConfirmationPassword}
                 />
                 <MyInput
+                    required
                     id="department"
                     type="text"
                     placeholder="Направление"
-                    required
+                    value={department}
+                    onChange={onChangeDepartment}
                 />
                 <MySelect/>
                 <FormGroup>

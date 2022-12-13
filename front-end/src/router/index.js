@@ -8,9 +8,11 @@ import MyProfile from "../pages/MyProfile";
 import SignUp from "../pages/SignUp";
 import CourseWorkId from "../pages/CourseWorkId";
 import CourseWorks from "../pages/CourseWorks";
+import CourseWorkForm from "../pages/CourseWorkForm";
 
 export const privateRoutes = [
     {path: '/profile', element: <MyProfile/>},
+    {path: '/createcoursework', element: <CourseWorkForm/>},
 ]
 
 export const publicRoutes = [

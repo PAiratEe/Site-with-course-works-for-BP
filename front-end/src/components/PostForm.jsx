@@ -20,6 +20,7 @@ const PostForm = ({create}) => {
                 type="text"
                 placeholder="Описание поста"
             />
+            {/*<Button onClick={addNewPost}>Создать пост</Button>*/}
         </form>
     );
 };

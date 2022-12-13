@@ -18,16 +18,15 @@ class AuthService {
             });
     }
 
-    register(surname, name, patronymic, email, password, department)
-    {
+    register(name, email) {
         return axios.post(back_URL + "/register", {
-            "surname": surname,
+            "surname": "Safin",
             "name": name,
-            "patronymic": patronymic,
+            "patronymic": "Fanisovich",
             "email": email,
-            "password": password,
+            "password": "483289432",
             "course": "1",
-            "department": department
+            "department": "пми",
         })
 
     }

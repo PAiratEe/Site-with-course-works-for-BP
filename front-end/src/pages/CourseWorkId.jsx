@@ -9,9 +9,27 @@ import PostService from "../API/PostService";
 const CourseWorkIdPAge = () => {
     const params = useParams()
     const [work, setWork] = useState({})
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
+    const [requirements, setRequirements] = useState("")
+    const [name, setName] = useState("")
+    const [surname, setSurname] = useState("")
+    const [patronymic, setPatronymic] = useState("")
+    const [email, setEmail] = useState("")
+    const [state, setState] = useState("")
+
+
     const [fetchWorkById, isLoading] = useFetching(async () => {
+        console.log(params)
         const response = await PostService.getById(params.id)
-        setWork(response.data)
+        setTitle(response.title)
+        setDescription(response.description)
+        setRequirements(response.requirements)
+        setName(response.professor.professorName)
+        setSurname(response.professor.professorSecondName)
+        setPatronymic(response.professor.professorPatronymic)
+        setState(response.professor.professorPost)
+        setEmail(response.professor.professorEmail)
     })
 
     useEffect(() => {
@@ -88,11 +106,17 @@ const CourseWorkIdPAge = () => {
                             </td>
                             <td className="body">
                                 <div>
-                                    <h1 id="theme">{work.title}</h1>
-                                    <pre style={{marginLeft: "10px"}}>{work.body}</pre>
-                                    <h2 id="knowledge">Необходимые знания</h2>
+                                    <h1 id="theme">{title}</h1>
+                                    <pre style={{marginLeft: "10px"}}>{description}</pre>
                                     <h2 id="links">Полезные ссылки</h2>
+                                    <h2 id="knowledge">Необходимые знания</h2>
+                                    <pre style={{marginLeft: "10px"}}>{requirements}</pre>
                                     <h2 id="contact_us">Контакты</h2>
+                                    <pre style={{marginLeft: "10px"}}>
+                                        Преподаватель: {surname + " " + name + " " + patronymic} <br/>
+                                        Звание: {state} <br/>
+                                        Почта: {email} <br/>
+                                    </pre>
                                     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                                 </div>
                             </td>
