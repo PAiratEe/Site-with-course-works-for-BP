@@ -5,6 +5,8 @@ import Navbar from "./components/UI/Navbar/Navbar";
 import AppRouter from "./components/AppRouter";
 import {AuthContext} from "./context";
 
+export const back_url = "http://localhost:7998"
+
 function App() {
     const [isAuth, setIsAuth] = useState(false)
 

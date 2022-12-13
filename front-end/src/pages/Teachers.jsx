@@ -10,7 +10,6 @@ const Teachers = () => {
     const [teachers, setTeachers] = useState([])
     const [fetchTeachers, isTeachersLoading] = useFetching(async () => {
         const teachers = await ProfessorService.getAll()
-        console.log(teachers)
         setTeachers(teachers)
     })
 

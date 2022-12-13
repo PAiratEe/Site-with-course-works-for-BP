@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const back_url = "http://localhost:7998"
+import {back_url} from "../App";
 
 export default class ProfessorService {
     static async getAll() {

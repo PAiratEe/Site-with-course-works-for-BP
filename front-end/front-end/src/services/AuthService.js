@@ -1,12 +1,11 @@
 import axios from "axios";
 
-const back_URL = "http://localhost:8080"
-
+import {back_url} from "../../../src/App";
 class AuthService {
 
     login(email, password) {
         return axios
-            .post(back_URL + "/login", {
+            .post(back_url + "/login", {
                 email,
                 password
             })
@@ -19,7 +18,7 @@ class AuthService {
     }
 
     register(name, email) {
-        return axios.post(back_URL + "/register", {
+        return axios.post(back_url + "/register", {
             "surname": "Safin",
             "name": name,
             "patronymic": "Fanisovich",

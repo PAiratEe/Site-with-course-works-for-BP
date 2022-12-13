@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const back_url = "http://localhost:8080"
+import {back_url} from "../../../src/App";
 
 export default class PostService {
     static async getAll() {

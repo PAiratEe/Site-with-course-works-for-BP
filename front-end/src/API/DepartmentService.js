@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const back_url = "http://localhost:7998"
-
+import {back_url} from "../App";
 export default class DepartmentService{
     static async getAll(){
         const response = await axios.get(back_url + "/departments")
