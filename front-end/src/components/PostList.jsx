@@ -9,21 +9,10 @@ const PostList = ({posts, title}) => {
     const [filter, setFilter] = useState({sort: '', query: ''})
     const sortedAndSearchedPosts = useDepartments(posts, filter.sort, filter.query)
 
-    if (!sortedAndSearchedPosts.length) {
-        return (
-            <div style={{width: "40vw"}}>
-                <h1>{title}</h1>
-                <PostFilter filter={filter} setFilter={setFilter}/>
-                <h2>Посты не найдены!</h2>
-            </div>
-
-        )
-    }
 
     return (
         <div style={{width: "40vw"}}>
-            <h1>{title}</h1>
-            <PostFilter filter={filter} setFilter={setFilter}/>
+            <h1 style={{marginLeft:"0", marginBottom:"100px", marginTop:"100px"}}>{title}</h1>
             {sortedAndSearchedPosts.map((post, index) =>
                 <PostItem number={index + 1} post={post} key={post.id}/>)}
         </div>

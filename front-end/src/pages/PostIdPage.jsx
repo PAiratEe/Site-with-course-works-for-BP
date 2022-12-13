@@ -23,7 +23,7 @@ const PostIdPage = () => {
                 <h1>Загружаю...</h1>
                 :
                 <div>
-                    <h1 style={{textAlign: "left"}}></h1>
+                    <h1 style={{textTransform:"lowercase"}}></h1>
                 </div>
             }
         </div>

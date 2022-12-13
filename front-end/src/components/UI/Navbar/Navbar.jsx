@@ -31,7 +31,7 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Microsoft Sans Serif",
+                                fontFamily: "Verdana",
                                 textTransform: "capitalize",
                             }}
                         >
@@ -45,11 +45,11 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Microsoft Sans Serif",
+                                fontFamily: "Verdana",
                                 textTransform: "capitalize",
                             }}
                         >
-                            Список кафедр
+                            Кафедры
                         </Button>
                     </Link>
                     <Link className={classes.link} to="/teachers">
@@ -59,11 +59,11 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Microsoft Sans Serif",
+                                fontFamily: "Verdana",
                                 textTransform: "capitalize",
                             }}
                         >
-                            Список преподавателей
+                            Преподаватели
                         </Button>
                     </Link>
                     <Link className={classes.link} to="/courseworks">
@@ -73,11 +73,11 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Microsoft Sans Serif",
+                                fontFamily: "Verdana",
                                 textTransform: "capitalize",
                             }}
                         >
-                            Список научных работ
+                            Темы курсовых работ
                         </Button>
                     </Link>
                     <BasicMenu/>
@@ -103,7 +103,7 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Microsoft Sans Serif",
+                                fontFamily: "Verdana",
                                 textTransform: "capitalize",
                             }}
                         >
@@ -117,11 +117,11 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Microsoft Sans Serif",
+                                fontFamily: "Verdana",
                                 textTransform: "capitalize",
                             }}
                         >
-                            Список кафедр
+                            Кафедры
                         </Button>
                     </Link>
                     <Link className={classes.link} to="/teachers">
@@ -131,11 +131,11 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Microsoft Sans Serif",
+                                fontFamily: "Verdana",
                                 textTransform: "capitalize",
                             }}
                         >
-                            Список преподавателей
+                            Преподаватели
                         </Button>
                     </Link>
                     <Link className={classes.link} to="/login">
@@ -145,7 +145,7 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Microsoft Sans Serif",
+                                fontFamily: "Verdana",
                                 textTransform: "capitalize",
                             }}
                         >
@@ -159,7 +159,7 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Microsoft Sans Serif",
+                                fontFamily: "Verdana",
                                 textTransform: "capitalize",
                             }}
                         >

@@ -20,7 +20,7 @@ const CourseWorks = () => {
         <div className="App">
             {isWorksLoading
                 ? <h2>Загружаю...</h2>
-                : <WorkList posts={works} title={'Список научных работ'}/>
+                : <WorkList posts={works}/>
             }
         </div>
     );

@@ -12,7 +12,7 @@ const TeacherList = ({posts, title}) => {
 
     if (!sortedAndSearchedPosts.length) {
         return (
-            <div style={{width: "40vw"}}>
+            <div className={"post"}>
                 <h1>{title}</h1>
                 <PostFilter filter={filter} setFilter={setFilter}/>
                 <h2>Учителя не найдены!</h2>
@@ -22,11 +22,10 @@ const TeacherList = ({posts, title}) => {
     }
 
     return (
-        <div style={{width: "40vw"}}>
-            <h1>{title}</h1>
-            <PostFilter filter={filter} setFilter={setFilter}/>
+        <div className={"post"}>
+            <h1 style={{marginLeft:"0", marginBottom:"100px", marginTop:"100px"}} className={"title"}>{title}</h1>
             {sortedAndSearchedPosts.map((post, index) =>
-                <ProfessorItem number={index + 1} post={post} key={post.id}/>)}
+                <ProfessorItem number={index + 1} post={post} key={post.id} />)}
         </div>
     );
 };

@@ -3,14 +3,8 @@ import MyInput from "./UI/input/MyInput";
 
 const PostFilter = ({filter, setFilter}) => {
     return (
-        <div style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "100%",
-        }}
-        >
-            <MyInput
+        <div>
+            <MyInput className={"search"}
                 value={filter.query}
                 onChange={e => setFilter({...filter, query: e.target.value})}
                 placeholder="Поиск..."

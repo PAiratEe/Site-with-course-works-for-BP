@@ -14,6 +14,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
+          <factory-entry name="Site-with-course-works-for-BP" value="ff0f11ab-c9b2-432d-9747-691cf30c5e3f" />
           <factory-entry name="entityManagerFactory" value="d2024def-fa98-422c-ab16-5d83c1ff84e7" />
         </datasource-mapping>
         <naming-strategy-map />
@@ -27,7 +28,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_18">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_16">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
