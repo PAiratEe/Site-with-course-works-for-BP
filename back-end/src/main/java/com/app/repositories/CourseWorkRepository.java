@@ -15,4 +15,8 @@ public interface CourseWorkRepository extends JpaRepository<CourseWork,Integer> 
     Boolean existsByTitle(String title);
 
     List<CourseWork> findByCourseWorkIdIn(Collection<Integer> ids);
+
+    Boolean existsByProfessorId(Integer id);
+
+    List<CourseWork> findCourseWorksByProfessorId(Integer id);
 }

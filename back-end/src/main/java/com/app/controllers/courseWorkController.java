@@ -6,15 +6,13 @@ import com.app.repositories.CourseWorkRepository;
 import com.app.repositories.DepartmentRepository;
 import com.app.repositories.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
-public class createNewCourseWork {
+public class courseWorkController {
 
     @Autowired
     CourseWorkRepository courseWorkRepository;
@@ -45,5 +43,12 @@ public class createNewCourseWork {
         return ResponseEntity.ok("Новая тема создана!");
     }
 
-
+    @GetMapping("/getAllCourseWorksByUserId")
+    public ResponseEntity<?> getAllCourseWorksByUserId(@RequestParam String id){
+        if(!courseWorkRepository.existsByProfessorId(Integer.parseInt(id))){
+            return ResponseEntity.ok("У вас еще нет работ!");
+        }
+        return new ResponseEntity<>(courseWorkRepository.findCourseWorksByProfessorId(Integer.parseInt(id)),
+                HttpStatus.OK);
+    }
 }
