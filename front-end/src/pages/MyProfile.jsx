@@ -27,12 +27,11 @@ const MyProfile = () => {
 
     return (
         <div>
-            <h1>
-                You know nothing, {name}
-            </h1>
+            <h2>
+                Личный кабинет пользователя
+            </h2>
             <Button
-                onClick={() => router(`/createcoursework`)}
-            >
+                onClick={() => router(`/createcoursework`)}>
                 Создать новый пост
             </Button>
             {/*<CourseWorkForm create={createWork}/>*/}

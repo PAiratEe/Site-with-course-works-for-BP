@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
 import {AuthContext} from "../../../context";
 import classes from './Navbar.module.css';
-import stark from "../../../stark.png"
+import stark from "../../../СПБГУ.jpg"
 import BasicMenu from "../dropdownMenu/dropdownMenu";
 import {Button} from "@mui/material";
 

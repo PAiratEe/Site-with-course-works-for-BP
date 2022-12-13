@@ -62,9 +62,9 @@ const SignUp = () => {
 
     function signup(e) {
         e.preventDefault()
-        AuthService.register(name, email).then(response => {
+        AuthService.register(name,surname,patronymic,email,password).then(response => {
                 setIsAuth(true)
-                localStorage.setItem('auth','Airat')
+                localStorage.setItem('auth', surname + " " + name)
                 navigate(-1)
             }
         )
@@ -79,7 +79,6 @@ const SignUp = () => {
                     id="surname"
                     name="surname"
                     type="surname"
-                    value={surname}
                     placeholder="Фамилия"
                     onChange={onChangeSurname}
                 />
@@ -88,7 +87,6 @@ const SignUp = () => {
                     id="name"
                     name="name"
                     type="name"
-                    value={name}
                     placeholder="Имя"
                     onChange={onChangeName}
                 />
@@ -97,7 +95,6 @@ const SignUp = () => {
                     id="patronymic"
                     name="patronymic"
                     type="patronymic"
-                    value={patronymic}
                     placeholder="Отчество"
                     onChange={onChangePatronymic}
                 />
@@ -108,7 +105,6 @@ const SignUp = () => {
                     placeholder="st******@student.spbu.ru"
                     name="email"
                     id = "email"
-                    value = {email}
                     onChange={onChangeEmail}
                 />
                 <MyInput
@@ -117,7 +113,6 @@ const SignUp = () => {
                     type="password"
                     placeholder="Введите пароль"
                     name="password"
-                    value = {password}
                     onChange={onChangePassword}
                 />
                 <MyInput
@@ -126,7 +121,6 @@ const SignUp = () => {
                     placeholder="Повторите пароль"
                     name="passwordRepeat"
                     type="passwordRepeat"
-                    value={passwordRepeat}
                     onChange={onChangeConfirmationPassword}
                 />
                 <MyInput
@@ -134,7 +128,6 @@ const SignUp = () => {
                     id="department"
                     type="text"
                     placeholder="Направление"
-                    value={department}
                     onChange={onChangeDepartment}
                 />
                 <MySelect/>
