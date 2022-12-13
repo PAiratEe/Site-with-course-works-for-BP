@@ -4,7 +4,7 @@ import matmeh from '../mathmechs.jpg'
 const MainPage = () => {
     return (
         <div>
-            <h1>Главная страница, bitches!</h1>
+            <h1>Главная страница сайта</h1>
             {/*<img*/}
             {/*    style={{*/}
             {/*        width: "100%",*/}

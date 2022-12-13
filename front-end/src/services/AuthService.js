@@ -1,33 +1,29 @@
 import axios from "axios";
 import {back_url} from "../App";
 
-class AuthService {
+export default class AuthService {
 
-    login(email, password) {
-        return axios
-            .post(back_url + "/login", {
-                email,
-                password
-            })
-            .then(response => {
-                if (response.data.token) {
-                    localStorage.setItem("user", JSON.stringify(response.data));
-                }
-                return response.data;
-            });
+    static async login(email, password) {
+        console.log(email)
+        console.log(password)
+        const response = await axios.get(back_url + "/login?email=" + email + "&password=" + password)
+        return response
     }
 
-    register(name, email) {
+    static async register(name,surname,patronymic,email,password) {
+        console.log(name)
+        console.log(surname)
+        console.log(patronymic)
+        console.log(email)
+        console.log(password)
         return axios.post(back_url + "/register", {
-            "surname": "Safin",
+            "surname": surname,
             "name": name,
-            "patronymic": "Fanisovich",
+            "patronymic": patronymic,
             "email": email,
-            "password": "483289432",
+            "password": password,
             "course": "1",
             "department": "пми",
         })
     }
 }
-
-export default new AuthService();
