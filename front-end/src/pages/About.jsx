@@ -6,45 +6,55 @@ const About = () => {
         <div>
             <h1>О чем сайт</h1>
             <div style={{
-                marginLeft: "3px",
-                textAlign: "center"
+                marginLeft: "10px",
+                textAlign: "left"
             }}
             >
-                Приложение для всех курсовых работ со всех кафедр, в котором легко можно было бы найти темы и научного руководителя для соответствующего курса.
+                Наш сайт предназначен для студентов Математико-механического факультета.
+                На нём собрана различная информация о преподавателях, кафедрах и темах курсовых работах.
+            </div> <br></br>
+            <div style={{
+                marginLeft: "10px",
+                textAlign: "left"
+            }}>
+                Пользователь может:
+                <div style={{
+                    marginLeft: "20px",
+                    textAlign: "left"
+                }}>
+                <ul type="disc">
+                    <li>Зарегистрироваться</li>
+                    <li>Авторизоваться</li>
+                    <li>Добавлять курсовые</li>
+                    <li>Просматривать список преподавателей, список их курсовых</li>
+                    <li>Просматривать список кафедр, список их курсовых</li>
+                </ul>
+                </div>
             </div>
-            <h1>В ролях</h1>
-            <table id="about_table">
-                <tbody>
-                    <tr id="about_tr">
-                        <td id="about_td">
-                            <img src={matmeh} style={{width: "20%"}}/>
-                            <div>Конченый идиот</div>
-                        </td>
-                        <td id="about_td">
-                            <img src={matmeh} style={{width: "20%"}}/>
-                            <div>Самый сексуальный мужик в мире</div>
-                        </td>
-                        <td id="about_td">
-                            <img src={matmeh} style={{width: "20%"}}/>
-                            <div>Горячая чикса</div>
-                        </td>
-                    </tr>
-                    <tr id="about_tr">
-                        <td id="about_td">
-                            <img src={matmeh} style={{width: "20%"}}/>
-                            <div>Злодей британец</div>
-                        </td>
-                        <td id="about_td">
-                            <img src={matmeh} style={{width: "20%"}}/>
-                            <div>Так себе шутник</div>
-                        </td>
-                        <td id="about_td">
-                            <img src={matmeh} style={{width: "20%"}}/>
-                            <div>Пубертатная язва</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <h1>Перспективы развития проекта</h1>
+            <div style={{
+                marginLeft: "10px",
+                textAlign: "left"
+            }}>
+                <div>Добавление тэгов</div>
+            </div>
+
+            <h1>Команда разработчиков</h1>
+            <div style={{
+                marginLeft: "30px",
+                textAlign: "left"
+            }}>
+                <ul type="square">
+                    <li>Королёв Артём</li>
+                    <li>Сафин Айрат</li>
+                    <li>Кисиев Тимур</li>
+                    <li>Мажара Евгений</li>
+                    <li>Плотникова Майя</li>
+                    <li>Федосеев Артём</li>
+                </ul>
+            </div>
+
         </div>
     )
 };
