@@ -14,12 +14,12 @@ export default class CourseWorkService {
     }
 
     static async getAllCourseWorksByProfessorId(id){
-        const response = await axios.get(back_url + "/getAllCourseWorksByUserId" + id)
+        const response = await axios.get(back_url + "/getAllCourseWorksByUserId?id=" + id)
         return response.data
     }
 
-    static async sendNewCourseWork(title, shortDescription, longDescription, requirements) {
-        console.log(title,shortDescription,longDescription,requirements)
+    static async sendNewCourseWork(title, shortDescription, longDescription, requirements, professorSurname, professorName, professorPatronymic, department) {
+        console.log(title, shortDescription, longDescription, requirements)
         return axios
             .post(
                 back_url + "/createNewCourseWork",
@@ -27,7 +27,11 @@ export default class CourseWorkService {
                     "title":title,
                     "shortDescription" : shortDescription,
                     "longDescription": longDescription,
-                    "requirements": requirements
+                    "requirements": requirements,
+                    "professorSurname": professorSurname,
+                    "professorName": professorName,
+                    "professorPatronymic": professorPatronymic,
+                    "department": department
                 }
             )
     }

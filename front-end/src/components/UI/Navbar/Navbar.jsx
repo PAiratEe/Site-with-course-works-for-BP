@@ -14,7 +14,7 @@ const Navbar = () => {
             ?
             <div className={classes.navbar} id="myNavbar">
                 <div className={classes.navbar__links}>
-                    <Link className={classes.link} to="/">
+                    <Link className={classes.link} to="/courseworks">
                         <Button
                             id="basic-button"
                             sx={{
@@ -31,7 +31,7 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Verdana",
+                                fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
                             }}
                         >
@@ -45,11 +45,11 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Verdana",
+                                fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
                             }}
                         >
-                            Кафедры
+                            Список кафедр
                         </Button>
                     </Link>
                     <Link className={classes.link} to="/teachers">
@@ -59,25 +59,11 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Verdana",
+                                fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
                             }}
                         >
-                            Преподаватели
-                        </Button>
-                    </Link>
-                    <Link className={classes.link} to="/courseworks">
-                        <Button
-                            id="basic-button"
-                            sx={{
-                                color: "whitesmoke",
-                                textShadow: "0px 0px 3px gray",
-                                fontSize: "18px",
-                                fontFamily: "Verdana",
-                                textTransform: "capitalize",
-                            }}
-                        >
-                            Темы курсовых работ
+                            Список преподавателей
                         </Button>
                     </Link>
                     <BasicMenu/>
@@ -86,7 +72,7 @@ const Navbar = () => {
             :
             <div className={classes.navbar}>
                 <div className={classes.navbar__links}>
-                    <Link className={classes.link} to="/">
+                    <Link className={classes.link} to="/courseworks">
                         <Button
                             id="basic-button"
                             sx={{
@@ -103,7 +89,7 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Verdana",
+                                fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
                             }}
                         >
@@ -117,11 +103,11 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Verdana",
+                                fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
                             }}
                         >
-                            Кафедры
+                            Список кафедр
                         </Button>
                     </Link>
                     <Link className={classes.link} to="/teachers">
@@ -131,11 +117,11 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Verdana",
+                                fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
                             }}
                         >
-                            Преподаватели
+                            Список преподавателей
                         </Button>
                     </Link>
                     <Link className={classes.link} to="/login">
@@ -145,7 +131,7 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Verdana",
+                                fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
                             }}
                         >
@@ -159,7 +145,7 @@ const Navbar = () => {
                                 color: "whitesmoke",
                                 textShadow: "0px 0px 3px gray",
                                 fontSize: "18px",
-                                fontFamily: "Verdana",
+                                fontFamily: "Microsoft Sans Serif",
                                 textTransform: "capitalize",
                             }}
                         >

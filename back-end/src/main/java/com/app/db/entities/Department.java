@@ -8,7 +8,7 @@ public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "departmentid" )
+    @Column(name = "departmentid")
     private Integer departmentId;
 
     @Column(name = "departmentname")

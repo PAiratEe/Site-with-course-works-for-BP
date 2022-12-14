@@ -8,6 +8,11 @@ export default class ProfessorService {
         return response.data
     }
 
+    static async getProfessorByName(name) {
+        const response = await axios.get(back_url + "/getProfessorsList?=" + name)
+        return response.data
+    }
+
     static async getById(id) {
         const response = await axios.get(back_url + "/getInfoAboutCourseWork?id=" + id)
         return response.data

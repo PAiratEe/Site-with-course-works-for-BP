@@ -30,7 +30,7 @@ public class courseWorkController {
         CourseWork courseWork = new CourseWork();
         courseWork.setTitle(request.getTitle());
         courseWork.setShortDescription(request.getShortDescription());
-        courseWork.setLongDescription(request.getLongDescription());
+        courseWork.setDescription(request.getLongDescription());
         courseWork.setRequirements(request.getRequirements());
         //var NSP = request.getProfessor().split(" ");
         //courseWork.setProfessor(professorRepository

@@ -6,7 +6,9 @@ const PostItem = (props) => {
     const router = useNavigate()
     return (
         <Button
-
+            sx={{
+                textTransform: "capitalize",
+            }}
             className={"minipost"}
             onClick={() => router(`/posts/${props.post.id}`)}
         >

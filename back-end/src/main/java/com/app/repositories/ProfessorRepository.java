@@ -8,4 +8,11 @@ public interface ProfessorRepository extends JpaRepository<Professor,Integer> {
                                                                               String SecondName,
                                                                               String Patronymic);
 
+    Boolean existsProfessorByProfessorNameAndProfessorSecondNameAndProfessorPatronymic(String Name,
+                                                                            String SecondName,
+                                                                            String Patronymic);
+
+    Boolean existsProfessorByProfessorEmail(String email);
+
+    Professor getProfessorByProfessorEmail(String email);
 }
