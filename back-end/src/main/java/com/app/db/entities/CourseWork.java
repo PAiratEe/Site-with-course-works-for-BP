@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "coursework",schema = "projectschema")
 public class CourseWork {
-
     public CourseWork(){}
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,10 +20,10 @@ public class CourseWork {
     private String shortDescription;
 
     @Column(name = "longdescription")
-    private String longDescription;
+    private String description;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "departmentId", referencedColumnName = "departmentid")
+    @JoinColumn(name = "departmentid", referencedColumnName = "departmentid")
     private Department department;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -75,15 +74,15 @@ public class CourseWork {
         return this.shortDescription;
     }
 
-    public String getLongDescription() {
-        return this.longDescription;
+    public String getDescription() {
+        return this.description;
     }
 
     public void setShortDescription(String ShortDescription) {
         this.shortDescription = ShortDescription;
     }
 
-    public void setLongDescription(String Description) {
-        this.longDescription = Description;
+    public void setDescription(String Description) {
+        this.description = Description;
     }
 }

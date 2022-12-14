@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 @Data
 @ToString
-public class SignUpRequest {
+public class SignUpStudentRequest {
     @NotBlank
     @Size(max =24)
     private String email;

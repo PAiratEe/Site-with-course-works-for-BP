@@ -10,7 +10,8 @@ const CourseWorkIdPAge = () => {
     const params = useParams()
     const [work, setWork] = useState({})
     const [title, setTitle] = useState("")
-    const [description, setDescription] = useState("")
+    const [shortDescription, setShortDescription] = useState("")
+    const [longDescription, setLongDescription] = useState("")
     const [requirements, setRequirements] = useState("")
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
@@ -22,7 +23,8 @@ const CourseWorkIdPAge = () => {
     const [fetchWorkById, isLoading] = useFetching(async () => {
         const response = await CourseWorkService.getById(params.id)
         setTitle(response.title)
-        setDescription(response.description)
+        setShortDescription(response.shortDescription)
+        setLongDescription(response.longDescription)
         setRequirements(response.requirements)
         setName(response.professor.professorName)
         setSurname(response.professor.professorSecondName)
@@ -106,7 +108,7 @@ const CourseWorkIdPAge = () => {
                             <td className="body">
                                 <div>
                                     <h1 id="theme">{title}</h1>
-                                    <pre style={{marginLeft: "10px"}}>{description}</pre>
+                                    <pre style={{marginLeft: "10px"}}>{longDescription}</pre>
                                     <h2 id="links">Полезные ссылки</h2>
                                     <h2 id="knowledge">Необходимые знания</h2>
                                     <pre style={{marginLeft: "10px"}}>{requirements}</pre>

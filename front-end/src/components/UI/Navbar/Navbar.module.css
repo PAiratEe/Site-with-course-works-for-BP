@@ -8,6 +8,7 @@
     background: #87AADF;
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 
 .navbar__links {
@@ -31,7 +32,7 @@
 }
 
 .logo {
-    width: 39px;
-    height: 39px;
+    width: 37px;
+    height: 37px;
     background: none;
 }
