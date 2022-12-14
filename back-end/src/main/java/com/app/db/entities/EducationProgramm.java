@@ -8,24 +8,24 @@ public class EducationProgramm {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "educationprogrammid")
-    private Integer EducationProgrammId;
+    private Integer educationProgrammId;
 
     @Column(name = "educationprogrammname")
-    private String EducationProgrammName;
+    private String educationProgrammName;
 
     public Integer getEducationProgrammId() {
-        return this.EducationProgrammId;
+        return this.educationProgrammId;
     }
 
     public String getEducationProgrammName() {
-        return this.EducationProgrammName;
+        return this.educationProgrammName;
     }
 
     public void setEducationProgrammId(Integer educationProgrammId) {
-        this.EducationProgrammId = educationProgrammId;
+        this.educationProgrammId = educationProgrammId;
     }
 
     public void setEducationProgrammName(String educationProgrammName) {
-        this.EducationProgrammName = educationProgrammName;
+        this.educationProgrammName = educationProgrammName;
     }
 }

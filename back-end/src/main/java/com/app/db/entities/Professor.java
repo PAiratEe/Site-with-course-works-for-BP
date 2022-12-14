@@ -29,7 +29,7 @@ public class Professor {
     private String professorPassword;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "departmentId", referencedColumnName = "departmentId")
+    @JoinColumn(name = "departmentid", referencedColumnName = "departmentid")
     private Department department;
 
 

@@ -1,6 +1,6 @@
 package com.app.controllers;
 
-import com.app.controllers.requestBody.SignUpRequest;
+import com.app.controllers.requestBody.SignUpStudentRequest;
 import com.app.db.entities.Student;
 import com.app.repositories.DepartmentRepository;
 import com.app.repositories.StudentRepository;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-public class signUpController {
+public class signUpStudentController {
 
     @Autowired
     StudentRepository studentRepository;
@@ -19,21 +19,21 @@ public class signUpController {
     @Autowired
     DepartmentRepository departmentRepository;
     @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@RequestBody SignUpRequest signUpRequest) {
+    public ResponseEntity<?> registerUser(@RequestBody SignUpStudentRequest signUpStudentRequest) {
 
-        if (studentRepository.existsStudentByStudentEmail(signUpRequest.getEmail())) {
+        if (studentRepository.existsStudentByStudentEmail(signUpStudentRequest.getEmail())) {
             return ResponseEntity
                     .badRequest()
                     .body("Этот логин уже занят");
         }
 
         Student student = new Student();
-        student.setStudentName(signUpRequest.getName());
-        student.setStudentCourseNumber(Integer.parseInt(signUpRequest.getCourse()));
-        student.setStudentEmail(signUpRequest.getEmail());
-        student.setStudentSurname(signUpRequest.getSurname());
-        student.setStudentPatronymic(signUpRequest.getPatronymic());
-        student.setPassword(signUpRequest.getPassword());
+        student.setStudentName(signUpStudentRequest.getName());
+        student.setStudentCourseNumber(Integer.parseInt(signUpStudentRequest.getCourse()));
+        student.setStudentEmail(signUpStudentRequest.getEmail());
+        student.setStudentSurname(signUpStudentRequest.getSurname());
+        student.setStudentPatronymic(signUpStudentRequest.getPatronymic());
+        student.setPassword(signUpStudentRequest.getPassword());
         studentRepository.save(student);
         return ResponseEntity.ok("Пользователь был успешно зарегистрирован");
     }

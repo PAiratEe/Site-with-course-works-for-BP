@@ -9,10 +9,12 @@ import SignUp from "../pages/SignUp";
 import CourseWorkId from "../pages/CourseWorkId";
 import CourseWorks from "../pages/CourseWorks";
 import CourseWorkForm from "../pages/CourseWorkForm";
+import CourseWorkEditor from "../pages/CourseWorkEditor";
 
 export const privateRoutes = [
     {path: '/profile', element: <MyProfile/>},
     {path: '/createcoursework', element: <CourseWorkForm/>},
+    {path: '/editcoursework/:id', element: <CourseWorkEditor/>},
 ]
 
 export const publicRoutes = [

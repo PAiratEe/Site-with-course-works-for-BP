@@ -1,5 +1,6 @@
 import React from 'react';
 import matmeh from '../mathmechs.jpg'
+import git from '../github.png'
 
 const About = () => {
     return (
@@ -39,22 +40,51 @@ const About = () => {
             }}>
                 <div>Добавление тэгов</div>
             </div>
-
-            <h1>Команда разработчиков</h1>
-            <div style={{
-                marginLeft: "30px",
-                textAlign: "left"
-            }}>
-                <ul type="square">
-                    <li>Королёв Артём</li>
-                    <li>Сафин Айрат</li>
-                    <li>Кисиев Тимур</li>
-                    <li>Мажара Евгений</li>
-                    <li>Плотникова Майя</li>
-                    <li>Федосеев Артём</li>
-                </ul>
-            </div>
-
+            <h1>Состав команды</h1>
+            <table className="about_table">
+                <tbody>
+                    <tr className="about_tr">
+                        <td className="about_td">
+                            {/*<img src={matmeh} style={{width: "20%"}}/>*/}
+                            <h2 style={{textAlign: "center"}}>Лидер команды</h2>
+                            <h3 style={{marginLeft: "10px"}}>Кисиев Тимур</h3>
+                            <a href="https://github.com/TimurKisiev11"><img src={git} style={{width: "20%"}}/></a>
+                        </td>
+                        <td className="about_td">
+                            {/*<img src={matmeh} style={{width: "20%"}}/>*/}
+                            <h2 style={{textAlign: "center"}}>Разработчик</h2>
+                            <h3 style={{marginLeft: "10px"}}>Мажара Евгений</h3>
+                            <a href="https://github.com/hyperdiamond0"><img src={git} style={{width: "20%"}}/></a>
+                        </td>
+                        <td className="about_td">
+                            {/*<img src={matmeh} style={{width: "20%"}}/>*/}
+                            <h2 style={{textAlign: "center"}}>Разработчик</h2>
+                            <h3 style={{marginLeft: "10px"}}>Королев Артем</h3>
+                            <a href="https://github.com/prostotema1"><img src={git} style={{width: "20%"}}/></a>
+                        </td>
+                    </tr>
+                    <tr className="about_tr">
+                        <td className="about_td">
+                            {/*<img src={matmeh} style={{width: "20%"}}/>*/}
+                            <h2 style={{textAlign: "center"}}>Разработчик</h2>
+                            <h3 style={{marginLeft: "10px"}}>Плотникова Майя</h3>
+                            <a href="https://github.com/Ima0203"><img src={git} style={{width: "20%"}}/></a>
+                        </td>
+                        <td className="about_td">
+                            {/*<img src={matmeh} style={{width: "20%"}}/>*/}
+                            <h2 style={{textAlign: "center"}}>Разработчик</h2>
+                            <h3 style={{marginLeft: "10px"}}>Сафин Айрат</h3>
+                            <a href="https://github.com/PAiratEe"><img src={git} style={{width: "20%"}}/></a>
+                        </td>
+                        <td className="about_td">
+                            {/*<img src={matmeh} style={{width: "20%"}}/>*/}
+                            <h2 style={{textAlign: "center"}}>Разработчик</h2>
+                            <h3 style={{marginLeft: "10px"}}>Федосеев Артем</h3>
+                            <a href="https://github.com/temmchikf"><img src={git} style={{width: "20%"}}/></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 };
