@@ -10,6 +10,7 @@ import CourseWorkId from "../pages/CourseWorkId";
 import CourseWorks from "../pages/CourseWorks";
 import CourseWorkForm from "../pages/CourseWorkForm";
 import CourseWorkEditor from "../pages/CourseWorkEditor";
+import TeacherId from "../components/TeacherId";
 
 export const privateRoutes = [
     {path: '/profile', element: <MyProfile/>},
@@ -25,6 +26,7 @@ export const publicRoutes = [
     {path: '/courseworks', element: <CourseWorks/>},
     {path: '/courseworks/:id', element: <CourseWorkId/>},
     {path: '/teachers', element: <Teachers/>},
+    {path: '/teachers/:id', element: <TeacherId/>},
     {path: '/*', element: <MainPage/>},
 ]
 

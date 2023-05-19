@@ -1,13 +1,39 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import MyInput from "../components/UI/input/MyInput";
 import {useState} from "react";
 import {Button} from "@mui/material";
 import CourseWorkService from "../API/CourseWorkService";
 import {useNavigate} from "react-router-dom";
+import {useFetching} from "../components/hooks/useFetching";
+import DepartmentService from "../API/DepartmentService";
+import ProfessorService from "../API/StudentService";
+
 
 const CourseWorkForm = () => {
   const navigate = useNavigate()
   const [work, setWork] = useState({title: '', requirements: '', shortDescription: '', longDescription: '', department: '', professor: ''})
+
+  const [options1, setOptions1] = useState([])
+  const [fetchOptions1, isFetchLoading1] = useFetching(async () => {
+    const options1 = await ProfessorService.getAll()
+    setOptions1(options1)
+  })
+
+  useEffect(() => {
+    fetchOptions1();
+  }, [])
+
+
+  const [options2, setOptions2] = useState([])
+  const [fetchOptions2, isFetchLoading2] = useFetching(async () => {
+    const options2 = await DepartmentService.getAll()
+    setOptions2(options2)
+  })
+
+  useEffect(() => {
+    fetchOptions2();
+  }, [])
+
 
   const addNewPost = (e) => {
     e.preventDefault()
