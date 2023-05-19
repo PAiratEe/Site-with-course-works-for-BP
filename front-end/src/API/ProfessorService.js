@@ -17,4 +17,9 @@ export default class ProfessorService {
         const response = await axios.get(back_url + "/getInfoAboutCourseWork?id=" + id)
         return response.data
     }
+
+    static async getAllFromDepartment(id){
+        const response = await axios.get(back_url + "/getAllFromDepartment?id=" + id)
+        return response.data
+    }
 }
