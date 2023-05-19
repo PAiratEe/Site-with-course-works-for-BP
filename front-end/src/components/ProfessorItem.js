@@ -7,7 +7,7 @@ const ProfessorItem = (props) => {
     return (
         <Button
             className={"minipost"}
-            onClick={() => router(`/posts/${props.post.id}`)}
+            onClick={() => router(`/teachers/${props.post.id}`)}
         >
             <div>
                 <h2 className={"title"} style={{textTransform:"capitalize"}}>{props.post.professorSecondName +

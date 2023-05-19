@@ -5,7 +5,6 @@ import {useFetching} from "../components/hooks/useFetching";
 import {useEffect, useState} from "react";
 import CourseWorkService from "../API/CourseWorkService";
 import '../styles/App.css'
-import WorkItem from "../components/WorkItem";
 import WorkItemCrud from "../components/WorkItemCRUD";
 
 
