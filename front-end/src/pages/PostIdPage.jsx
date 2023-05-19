@@ -6,7 +6,7 @@ import ProfessorService from "../API/ProfessorService";
 
 const PostIdPage = () => {
     const params = useParams()
-    const [teachers, setTeachers] = useState({})
+    const [teachers, setTeachers] = useState([])
     const [fetchPostById, isLoading] = useFetching(async () => {
         const response = await ProfessorService.getAllFromDepartment(params.id)
         console.log(response)
