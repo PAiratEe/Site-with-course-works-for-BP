@@ -4,25 +4,31 @@ import {useFetching} from "./hooks/useFetching";
 import CourseWorkService from "../API/CourseWorkService";
 import {Button} from "@mui/material";
 import WorkItem from "./WorkItem";
+import ProfessorService from "../API/ProfessorService";
 
 const TeacherId = () => {
-  const auth = localStorage.getItem('auth')
   const params = useParams()
   const [works, setWorks] = useState([])
-  const [name, setName] = useState("")
-  const [surname, setSurname] = useState("")
-  const [patronymic, setPatronymic] = useState("")
+  const [professorInfo,setProfessorInfo] = useState([])
   const [fetchWorks, isWorksLoading] = useFetching(async () => {
-    const works = await CourseWorkService.getAllCourseWorksByProfessorId(1)
+    const response = await CourseWorkService.getAllCourseWorksByProfessorId(params.id)
+    console.log(response)
+    if(response != "У вас еще нет работ!"){setWorks(response)}
+  })
+  const[fetchProfessor,isProfessorLoading] = useFetching(async ()=>{
+    const response = await ProfessorService.getProfessorInfoById(params.id)
+    console.log(response)
+    setProfessorInfo(response)
   })
 
   useEffect(() => {
-    fetchWorks();
+    fetchWorks()
+    fetchProfessor()
   }, [])
 
   return (
       <div>
-        {isWorksLoading
+        {isWorksLoading && isProfessorLoading
             ?
             <h1>Загружаю...</h1>
             :
@@ -66,23 +72,19 @@ const TeacherId = () => {
                     <div>
                       <h2 id="about">Личная информация</h2>
                       <div style={{marginLeft: "10px"}}>
-                        {params.professor} <br/>
-                        Звание:  <br/>
-                        Почта: mikhail.blagov@gmail.com<br/>
+                        {professorInfo.professorSecondName + " " + professorInfo.professorName +" " +  professorInfo.professorPatronymic} <br/>
+                        Звание:  {professorInfo.professorPost}<br/>
+                        Почта: {professorInfo.professorEmail}<br/>
                       </div>
-                      {/*<div>*/}
-                      {/*    {surname + " " + name + " " + patronymic} <br/>*/}
-                      {/*    Звание: {state} <br/>*/}
-                      {/*    Почта: {email} <br/>*/}
-                      {/*</div>*/}
                       <h2 id="courseworks"></h2>
                       <div style={{
                         marginLeft: "10px",
                         width: "40%"
                       }}>
                         {works.map((coursework, index) =>
-                            <WorkItem number={index + 1} coursework={coursework}
-                                      key={coursework.courseWorkId}/>)}
+                                <WorkItem number={index + 1} coursework={coursework}
+                                          key={coursework.courseWorkId}/>)
+                        }
                       </div>
                       <br/><br/>
                     </div>

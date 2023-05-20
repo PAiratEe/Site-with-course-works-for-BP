@@ -19,4 +19,6 @@ public interface ProfessorRepository extends JpaRepository<Professor,Integer> {
     Professor getProfessorByProfessorEmail(String email);
 
     List<Professor> getProfessorsByDepartmentId(Integer DepartmentId);
+
+    Professor getProfessorById(Integer Id);
 }

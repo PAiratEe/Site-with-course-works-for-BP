@@ -8,7 +8,7 @@ const PostIdPage = () => {
     const params = useParams()
     const [teachers, setTeachers] = useState([])
     const [fetchPostById, isLoading] = useFetching(async () => {
-        const response = await ProfessorService.getAllFromDepartment(params.id)
+        const response = await ProfessorService.getAllProfessorsFromDepartment(params.id)
         console.log(response)
         setTeachers(response)
     })
