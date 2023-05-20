@@ -5,9 +5,7 @@ import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
@@ -24,6 +22,12 @@ public class professorPageController {
         }
         return new ResponseEntity<>(professors, HttpStatus.OK);
 
+    }
+
+    @GetMapping("/infoAboutProf")
+    ResponseEntity<?> getInfoAboutProf(@RequestParam String id){
+        var professorInfo = professorRepository.getProfessorById(Integer.parseInt(id));
+        return new ResponseEntity<>(professorInfo,HttpStatus.OK);
     }
 
 

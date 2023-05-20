@@ -9,7 +9,7 @@ import TeacherList from "../components/TeacherList";
 const Teachers = () => {
     const [teachers, setTeachers] = useState([])
     const [fetchTeachers, isTeachersLoading] = useFetching(async () => {
-        const teachers = await ProfessorService.getAll()
+        const teachers = await ProfessorService.getAllProfessors()
         setTeachers(teachers)
     })
 
