@@ -11,7 +11,7 @@ import ProfessorService from "../API/StudentService";
 
 const CourseWorkForm = () => {
   const navigate = useNavigate()
-  const [work, setWork] = useState({title: '', requirements: '', shortDescription: '', longDescription: '', department: '', professor: ''})
+  const [work, setWork] = useState({title: '', requirements: '', shortDescription: '', longDescription: '', department: '', professorId: ''})
 
   const [options1, setOptions1] = useState([])
   const [fetchOptions1, isFetchLoading1] = useFetching(async () => {
@@ -37,8 +37,8 @@ const CourseWorkForm = () => {
 
   const addNewPost = (e) => {
     e.preventDefault()
-    console.log(work.title, work.shortDescription, work.longDescription, work.requirements)
-    CourseWorkService.sendNewCourseWork(work.title, work.shortDescription, work.longDescription, work.requirements, 'Благов', 'Кафедра прикладной кибернетики')
+    console.log(work.title, work.shortDescription, work.longDescription, work.requirements, work.professorId)
+    CourseWorkService.sendNewCourseWork(work.title, work.shortDescription, work.longDescription, work.requirements, 'Благов', 'Кафедра прикладной кибернетики', 1, 1, 1)
     navigate(-1)
   }
 

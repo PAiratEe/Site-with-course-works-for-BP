@@ -13,7 +13,8 @@ const TeacherId = () => {
   const [surname, setSurname] = useState("")
   const [patronymic, setPatronymic] = useState("")
   const [fetchWorks, isWorksLoading] = useFetching(async () => {
-    const works = await CourseWorkService.getAllCourseWorksByProfessorId(1)
+    const works = await CourseWorkService.getAllCourseWorksByProfessorId(params.id)
+    setWorks(works)
   })
 
   useEffect(() => {

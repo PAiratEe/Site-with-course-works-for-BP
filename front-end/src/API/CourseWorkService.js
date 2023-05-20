@@ -18,8 +18,8 @@ export default class CourseWorkService {
         return response.data
     }
 
-    static async sendNewCourseWork(title, shortDescription, longDescription, requirements, professorSurname, professorName, professorPatronymic, department) {
-        console.log(title, shortDescription, longDescription, requirements)
+    static async sendNewCourseWork(title, shortDescription, longDescription, requirements, professorSurname, professorName, professorPatronymic, department, professorId) {
+        console.log(title, shortDescription, longDescription, requirements, professorId)
         return axios
             .post(
                 back_url + "/createNewCourseWork",
@@ -31,8 +31,27 @@ export default class CourseWorkService {
                     "professorSurname": professorSurname,
                     "professorName": professorName,
                     "professorPatronymic": professorPatronymic,
-                    "department": department
+                    "department": department,
+                    "professorId": professorId
                 }
             )
     }
+
+  static async editCourseWork(title, shortDescription, longDescription, requirements, professorSurname, professorName, professorPatronymic, department) {
+    console.log(title, shortDescription, longDescription, requirements)
+    return axios
+    .post(
+        back_url + "/createNewCourseWork",
+        {
+          "title":title,
+          "shortDescription" : shortDescription,
+          "longDescription": longDescription,
+          "requirements": requirements,
+          "professorSurname": professorSurname,
+          "professorName": professorName,
+          "professorPatronymic": professorPatronymic,
+          "department": department
+        }
+    )
+  }
 }

@@ -13,7 +13,7 @@ const MyProfile = () => {
     const router = useNavigate()
     const [works, setWorks] = useState([])
     const [fetchWorks, isWorksLoading] = useFetching(async () => {
-        const works = await CourseWorkService.getAllCourseWorksByProfessorId(1)
+        const works = await CourseWorkService.getAllCourseWorksByProfessorId(2)
         setWorks(works)
     })
 

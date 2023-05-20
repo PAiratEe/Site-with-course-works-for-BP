@@ -41,7 +41,7 @@ const CourseWorkEditor = () => {
   const addNewPost = (e) => {
     e.preventDefault()
     console.log(title, shortDescription, longDescription, requirements)
-    CourseWorkService.sendNewCourseWork(title, shortDescription, longDescription, requirements, 'Благов', 'Михаил', 'Валерьевич', 'Прикладная кибернетика')
+    CourseWorkService.sendNewCourseWork(title, shortDescription, longDescription, requirements, 'Благов', 'Михаил', 'Валерьевич', 'Прикладная кибернетика', 1)
     navigate(-1)
   }
 
