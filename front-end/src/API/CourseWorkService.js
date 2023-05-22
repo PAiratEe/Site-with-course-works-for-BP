@@ -18,21 +18,40 @@ export default class CourseWorkService {
         return response.data
     }
 
-    static async sendNewCourseWork(title, shortDescription, longDescription, requirements, professorSurname, professorName, professorPatronymic, department) {
-        console.log(title, shortDescription, longDescription, requirements)
+    static sendNewCourseWork(title, shortDescription, longDescription, requirements, department, professorId) {
+        console.log(title, shortDescription, longDescription, requirements, department, professorId)
         return axios
             .post(
                 back_url + "/createNewCourseWork",
                 {
-                    "title":title,
+                    "title": title,
                     "shortDescription" : shortDescription,
                     "longDescription": longDescription,
                     "requirements": requirements,
-                    "professorSurname": professorSurname,
-                    "professorName": professorName,
-                    "professorPatronymic": professorPatronymic,
-                    "department": department
+                    // "professorSurname": professorSurname,
+                    // "professorName": professorName,
+                    // "professorPatronymic": professorPatronymic,
+                    "department": department,
+                    "professorid": professorId
                 }
             )
     }
+
+  // static async editCourseWork(title, shortDescription, longDescription, requirements, professorSurname, professorName, professorPatronymic, department) {
+  //   console.log(title, shortDescription, longDescription, requirements)
+  //   return axios
+  //   .post(
+  //       back_url + "/createNewCourseWork",
+  //       {
+  //         "title":title,
+  //         "shortDescription" : shortDescription,
+  //         "longDescription": longDescription,
+  //         "requirements": requirements,
+  //         "professorSurname": professorSurname,
+  //         "professorName": professorName,
+  //         "professorPatronymic": professorPatronymic,
+  //         "department": department
+  //       }
+  //   )
+  // }
 }

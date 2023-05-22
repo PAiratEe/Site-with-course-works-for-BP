@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface StudentRepository extends JpaRepository<Student,Integer> {
     Boolean existsStudentByStudentEmail(String email);
     Student getStudentByStudentEmail(String email);
-
+    Student getStudentById(Integer Id);
 }

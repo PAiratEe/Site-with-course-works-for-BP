@@ -15,6 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import {useFetching} from "../components/hooks/useFetching";
 import DepartmentService from "../API/DepartmentService";
 import ProfessorService from "../API/ProfessorService";
+import StudentService from "../API/StudentService";
 
 const SignUp = () => {
   const {isAuth, setIsAuth} = useContext(AuthContext)
@@ -106,7 +107,7 @@ const SignUp = () => {
             setIsAuth(true)
             // let student = ProfessorService.getProfessorByName(name);
             // localStorage.setItem(student.studentId, surname + " " + name)
-            localStorage.setItem('auth', surname + " " + name)
+            localStorage.setItem('auth', StudentService.getStudentByEmail(email).id)
             navigate(-1)
           }
       )
@@ -117,7 +118,7 @@ const SignUp = () => {
             setIsAuth(true)
             // let professor = ProfessorService.getProfessorByName(name);
             // localStorage.setItem(professor.professorId, surname + " " + name)
-            localStorage.setItem('auth', surname + " " + name)
+            localStorage.setItem('auth', StudentService.getStudentByEmail(email).id)
             navigate(-1)
           }
       )

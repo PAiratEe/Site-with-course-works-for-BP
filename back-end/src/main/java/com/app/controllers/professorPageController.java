@@ -1,6 +1,7 @@
 package com.app.controllers;
 
 import com.app.repositories.ProfessorRepository;
+import com.app.repositories.StudentRepository;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,9 @@ public class professorPageController {
     @Autowired
     ProfessorRepository professorRepository;
 
+    @Autowired
+    StudentRepository studentRepository;
+
     @GetMapping("/getProfessorsList")
     ResponseEntity<?> getProfessorsList(){
         var professors = professorRepository.findAll();
@@ -24,12 +28,16 @@ public class professorPageController {
 
     }
 
-    @GetMapping("/infoAboutProf")
-    ResponseEntity<?> getInfoAboutProf(@RequestParam String id){
-        var professorInfo = professorRepository.getProfessorById(Integer.parseInt(id));
-        return new ResponseEntity<>(professorInfo,HttpStatus.OK);
+//    @GetMapping("/infoAboutProf")
+//    ResponseEntity<?> getInfoAboutProf(@RequestParam String id){
+//        var professorInfo = professorRepository.getProfessorById(Integer.parseInt(id));
+//        return new ResponseEntity<>(professorInfo,HttpStatus.OK);
+//    }
+
+    @GetMapping("/infoAboutStud")
+    ResponseEntity<?> getInfoAboutStud(@RequestParam String id){
+        var studentInfo = studentRepository.getStudentById(Integer.parseInt(id));
+        return new ResponseEntity<>(studentInfo,HttpStatus.OK);
     }
-
-
 
 }

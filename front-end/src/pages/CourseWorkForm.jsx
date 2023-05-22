@@ -10,35 +10,36 @@ import ProfessorService from "../API/StudentService";
 
 
 const CourseWorkForm = () => {
+  const auth = localStorage.getItem('auth')
   const navigate = useNavigate()
-  const [work, setWork] = useState({title: '', requirements: '', shortDescription: '', longDescription: '', department: '', professor: ''})
+  const [work, setWork] = useState({title: '', requirements: '', shortDescription: '', longDescription: '', department: ''})
 
-  const [options1, setOptions1] = useState([])
-  const [fetchOptions1, isFetchLoading1] = useFetching(async () => {
-    const options1 = await ProfessorService.getAll()
-    setOptions1(options1)
-  })
-
-  useEffect(() => {
-    fetchOptions1();
-  }, [])
-
-
-  const [options2, setOptions2] = useState([])
-  const [fetchOptions2, isFetchLoading2] = useFetching(async () => {
-    const options2 = await DepartmentService.getAll()
-    setOptions2(options2)
-  })
-
-  useEffect(() => {
-    fetchOptions2();
-  }, [])
+  // const [options1, setOptions1] = useState([])
+  // const [fetchOptions1, isFetchLoading1] = useFetching(async () => {
+  //   const options1 = await ProfessorService.getAll()
+  //   setOptions1(options1)
+  // })
+  //
+  // useEffect(() => {
+  //   fetchOptions1();
+  // }, [])
+  //
+  //
+  // const [options2, setOptions2] = useState([])
+  // const [fetchOptions2, isFetchLoading2] = useFetching(async () => {
+  //   const options2 = await DepartmentService.getAll()
+  //   setOptions2(options2)
+  // })
+  //
+  // useEffect(() => {
+  //   fetchOptions2();
+  // }, [])
 
 
   const addNewPost = (e) => {
     e.preventDefault()
-    console.log(work.title, work.shortDescription, work.longDescription, work.requirements)
-    CourseWorkService.sendNewCourseWork(work.title, work.shortDescription, work.longDescription, work.requirements, 'Благов', 'Кафедра прикладной кибернетики')
+    // console.log(work.title, work.shortDescription, work.longDescription, work.requirements, auth)
+    CourseWorkService.sendNewCourseWork(work.title, work.shortDescription, work.longDescription, work.requirements, "Прикладная кибернетика", auth)
     navigate(-1)
   }
 

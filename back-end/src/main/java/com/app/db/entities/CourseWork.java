@@ -69,6 +69,10 @@ public class CourseWork {
     public void setProfessor(Professor professor) {
         this.professor = professor;
     }
+//
+//    public void setProfessorById(Integer id) {
+//        this.
+//    }
 
     public String getShortDescription() {
         return this.shortDescription;

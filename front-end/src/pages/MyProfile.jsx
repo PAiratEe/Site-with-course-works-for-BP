@@ -6,15 +6,20 @@ import {useEffect, useState} from "react";
 import CourseWorkService from "../API/CourseWorkService";
 import '../styles/App.css'
 import WorkItemCrud from "../components/WorkItemCRUD";
+import ProfessorService from "../API/ProfessorService";
+import StudentService from "../API/StudentService";
 
 
 const MyProfile = () => {
     const auth = localStorage.getItem('auth')
     const router = useNavigate()
+    const [info, setInfo] = useState([])
     const [works, setWorks] = useState([])
     const [fetchWorks, isWorksLoading] = useFetching(async () => {
-        const works = await CourseWorkService.getAllCourseWorksByProfessorId(1)
+        // const info = await StudentService.getStudentById(auth)
+        const works = await CourseWorkService.getAllCourseWorksByProfessorId(auth)
         setWorks(works)
+        // setInfo(info)
     })
 
     useEffect(() => {
@@ -67,7 +72,7 @@ const MyProfile = () => {
                                 <div>
                                     <h2 id="about">Личная информация</h2>
                                     <div style={{marginLeft: "10px"}}>
-                                        {auth} <br/>
+                                        {/*{info.map((index) => <div>{index}</div>)} <br/>*/}
                                         Звание:  <br/>
                                         Почта: airatsafin65578@gmail.com <br/>
                                     </div>

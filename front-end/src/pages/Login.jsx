@@ -23,7 +23,7 @@ const Login = () => {
         event.preventDefault()
         AuthService.login(email, password).then(response => {
                 setIsAuth(true)
-                localStorage.setItem('auth', response.data.studentSurname + " " + response.data.studentName)
+                localStorage.setItem('auth', response.data.id)
                 navigate(-1)
             }
         )
