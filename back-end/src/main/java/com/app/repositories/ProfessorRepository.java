@@ -4,7 +4,9 @@ import com.app.db.entities.Professor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ProfessorRepository extends JpaRepository<Professor,Integer> {
     Professor findByProfessorNameAndProfessorSecondNameAndProfessorPatronymic(String Name,
                                                                               String SecondName,
@@ -20,5 +22,5 @@ public interface ProfessorRepository extends JpaRepository<Professor,Integer> {
 
     List<Professor> getProfessorsByDepartmentId(Integer DepartmentId);
 
-    Professor getProfessorById(Integer Id);
+    Professor getProfessorByProfessorId(Integer Id);
 }

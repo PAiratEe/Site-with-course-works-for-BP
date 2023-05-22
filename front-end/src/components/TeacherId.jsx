@@ -9,13 +9,16 @@ import ProfessorService from "../API/ProfessorService";
 const TeacherId = () => {
   const params = useParams()
   const [works, setWorks] = useState([])
-  const [professorInfo,setProfessorInfo] = useState([])
+  const [professorInfo, setProfessorInfo] = useState([])
   const [fetchWorks, isWorksLoading] = useFetching(async () => {
-    const response = await CourseWorkService.getAllCourseWorksByProfessorId(params.id)
+    const response = await CourseWorkService.getAllCourseWorksByProfessorId(
+        params.id)
     console.log(response)
-    if(response != "У вас еще нет работ!"){setWorks(response)}
+    if (response != "У вас еще нет работ!") {
+      setWorks(response)
+    }
   })
-  const[fetchProfessor,isProfessorLoading] = useFetching(async ()=>{
+  const [fetchProfessor, isProfessorLoading] = useFetching(async () => {
     const response = await ProfessorService.getProfessorInfoById(params.id)
     console.log(response)
     setProfessorInfo(response)
@@ -72,8 +75,10 @@ const TeacherId = () => {
                     <div>
                       <h2 id="about">Личная информация</h2>
                       <div style={{marginLeft: "10px"}}>
-                        {professorInfo.professorSecondName + " " + professorInfo.professorName +" " +  professorInfo.professorPatronymic} <br/>
-                        Звание:  {professorInfo.professorPost}<br/>
+                        {professorInfo.prpfessorSecondName + " "
+                            + professorInfo.professorName + " "
+                            + professorInfo.professorPatronymic} <br/>
+                        Звание: {professorInfo.professorPost}<br/>
                         Почта: {professorInfo.professorEmail}<br/>
                       </div>
                       <h2 id="courseworks"></h2>
@@ -82,8 +87,8 @@ const TeacherId = () => {
                         width: "40%"
                       }}>
                         {works.map((coursework, index) =>
-                                <WorkItem number={index + 1} coursework={coursework}
-                                          key={coursework.courseWorkId}/>)
+                            <WorkItem number={index + 1} coursework={coursework}
+                                      key={coursework.courseWorkId}/>)
                         }
                       </div>
                       <br/><br/>

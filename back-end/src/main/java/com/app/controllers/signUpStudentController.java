@@ -3,6 +3,7 @@ package com.app.controllers;
 import com.app.controllers.requestBody.SignUpStudentRequest;
 import com.app.db.entities.Student;
 import com.app.repositories.DepartmentRepository;
+import com.app.repositories.ProfessorRepository;
 import com.app.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,9 @@ public class signUpStudentController {
 
     @Autowired
     StudentRepository studentRepository;
+
+    @Autowired
+    ProfessorRepository professorRepository;
 
     @Autowired
     DepartmentRepository departmentRepository;
@@ -41,13 +45,13 @@ public class signUpStudentController {
     @GetMapping("/login")
     public ResponseEntity<?> checkUser(@RequestParam String email,@RequestParam String password){
 
-        if(studentRepository.existsStudentByStudentEmail(email)){
-            var student = studentRepository.getStudentByStudentEmail(email);
-            if(student.getPassword().equals(password)){
-                return new ResponseEntity<>(student,HttpStatus.OK);
-            }
-        }
-        return new ResponseEntity<>("Введен неправильно пароль или email",HttpStatus.BAD_REQUEST);
+//        if(professorRepository.existsProfessorByProfessorEmail(email)) {
+//            var professor = professorRepository.getProfessorByProfessorEmail(email);
+//            if(professor.getProfessorPassword().equals(password)){
+                return new ResponseEntity<>(professorRepository.getProfessorByProfessorEmail(email),HttpStatus.OK);
+//            }
+//        }
+//        return new ResponseEntity<>("Введен неправильно email или пароль",HttpStatus.BAD_REQUEST);
     }
 
 
