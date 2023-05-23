@@ -75,7 +75,7 @@ const TeacherId = () => {
                     <div>
                       <h2 id="about">Личная информация</h2>
                       <div style={{marginLeft: "10px"}}>
-                        {professorInfo.prpfessorSecondName + " "
+                        {professorInfo.professorSecondName + " "
                             + professorInfo.professorName + " "
                             + professorInfo.professorPatronymic} <br/>
                         Звание: {professorInfo.professorPost}<br/>

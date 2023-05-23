@@ -26,6 +26,6 @@ public class CreateCourseWorkRequest {
     private String department;
 
     @NotBlank
-    private String professorid;
+    private String professorId;
 
 }

@@ -28,11 +28,11 @@ public class professorPageController {
 
     }
 
-//    @GetMapping("/infoAboutProf")
-//    ResponseEntity<?> getInfoAboutProf(@RequestParam String id){
-//        var professorInfo = professorRepository.getProfessorById(Integer.parseInt(id));
-//        return new ResponseEntity<>(professorInfo,HttpStatus.OK);
-//    }
+    @GetMapping("/infoAboutProf")
+    ResponseEntity<?> getInfoAboutProf(@RequestParam String id){
+        var professorInfo = professorRepository.getProfessorByProfessorId(Integer.parseInt(id));
+        return new ResponseEntity<>(professorInfo,HttpStatus.OK);
+    }
 
     @GetMapping("/infoAboutStud")
     ResponseEntity<?> getInfoAboutStud(@RequestParam String id){

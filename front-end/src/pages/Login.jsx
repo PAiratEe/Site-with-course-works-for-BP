@@ -21,9 +21,24 @@ const Login = () => {
 
     function login(event) {
         event.preventDefault()
-        AuthService.login(email, password).then(response => {
+        var response = AuthService.login(email, password).then(response => {
                 setIsAuth(true)
-                localStorage.setItem('auth', response.data.id + " " + response.data.studentEmail + " " + response.data.studentName + " " + response.data.studentSurname)
+                localStorage.setItem('id',response.data.id)
+                if(response.data.professorEmail !== undefined){
+                    localStorage.setItem('email', response.data.professorEmail)
+                    localStorage.setItem('name', response.data.professorName)
+                    localStorage.setItem('surname',response.data.professorSecondName)
+                    localStorage.setItem('patronymic',response.data.professorPatronymic)
+                    localStorage.setItem('state',response.data.professorPost)
+                    localStorage.setItem('isStud','false')
+                }
+                else {
+                    localStorage.setItem('email', response.data.studentEmail)
+                    localStorage.setItem('name', response.data.studentName)
+                    localStorage.setItem('surname',response.data.studentSurname)
+                    localStorage.setItem('state',response.data.studentCourseNumber + " курс " + response.data.studentCourseName)
+                    localStorage.setItem('isStud','true')
+                }
                 navigate(-1)
             }
         )

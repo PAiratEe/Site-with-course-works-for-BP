@@ -32,7 +32,7 @@ export default class CourseWorkService {
                     // "professorName": professorName,
                     // "professorPatronymic": professorPatronymic,
                     "department": department,
-                    "professorid": professorId
+                    "professorId": professorId
                 }
             )
     }

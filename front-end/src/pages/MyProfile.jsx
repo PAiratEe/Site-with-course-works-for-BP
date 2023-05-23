@@ -10,22 +10,22 @@ import WorkItem from "../components/WorkItem";
 
 
 const MyProfile = () => {
-    const auth = localStorage.getItem('auth').split(' ')
+    const id = localStorage.getItem('id')
+    const name = localStorage.getItem('name')
+    const surname = localStorage.getItem('surname')
+    const email = localStorage.getItem('email')
+    const patronymic = localStorage.getItem('patronymic')
+    const state = localStorage.getItem('state')
+    const isStud = localStorage.getItem('isStud')
     const router = useNavigate()
     const [works, setWorks] = useState([])
     const [fetchWorks, isWorksLoading] = useFetching(async () => {
-        const works = await CourseWorkService.getAllCourseWorksByProfessorId(auth[0])
+        const works = await CourseWorkService.getAllCourseWorksByProfessorId(id)
         setWorks(works)
     })
+    const [inf,setInf]= useState([])
 
-    let user = true;
 
-    if (auth[1].includes("@student.spbu.ru")) {
-        user = true;
-    }
-    else {
-        user = false;
-    }
 
     useEffect(() => {
         fetchWorks();
@@ -38,7 +38,7 @@ const MyProfile = () => {
                 <h1>Загружаю...</h1>
                 :
                 <div>
-                {user
+                {isStud==='true'
                     ?
                     <div>
                         <table>
@@ -81,14 +81,10 @@ const MyProfile = () => {
                                         <h2 id="about">Личная информация</h2>
                                         <div style={{marginLeft: "10px"}}>
                                             {/*{info.map((index) => <div>{index}</div>)} <br/>*/}
-                                            Звание:  <br/>
-                                            Почта: airatsafin65578@gmail.com <br/>
+                                            {surname + " " + name + " " + patronymic}
+                                            Звание: {state}<br/>
+                                            Почта: {email} <br/>
                                         </div>
-                                        {/*<div>*/}
-                                        {/*    {surname + " " + name + " " + patronymic} <br/>*/}
-                                        {/*    Звание: {state} <br/>*/}
-                                        {/*    Почта: {email} <br/>*/}
-                                        {/*</div>*/}
                                         <h2 id="courseworks"></h2>
                                         <div style={{
                                             marginLeft: "10px",
@@ -145,15 +141,10 @@ const MyProfile = () => {
                                     <div>
                                         <h2 id="about">Личная информация</h2>
                                         <div style={{marginLeft: "10px"}}>
-                                            {/*{info.map((index) => <div>{index}</div>)} <br/>*/}
-                                            Звание:  <br/>
-                                            Почта: airatsafin65578@gmail.com <br/>
+                                            {surname + " " + name + " " + patronymic}<br/>
+                                            Звание: {state} <br/>
+                                            Почта: {email} <br/>
                                         </div>
-                                        {/*<div>*/}
-                                        {/*    {surname + " " + name + " " + patronymic} <br/>*/}
-                                        {/*    Звание: {state} <br/>*/}
-                                        {/*    Почта: {email} <br/>*/}
-                                        {/*</div>*/}
                                         <h2 id="courseworks"></h2>
                                         <div style={{
                                             marginLeft: "10px",

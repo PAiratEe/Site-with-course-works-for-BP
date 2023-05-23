@@ -24,16 +24,16 @@ public class courseWorkController {
 
     @PostMapping("/createNewCourseWork")
     public ResponseEntity<?> createNewCourseWork(@RequestBody CreateCourseWorkRequest request) {
-        //if(courseWorkRepository.existsCourseWorkByTitle(request.getTitle())){
-         //   return ResponseEntity.badRequest().body("Тема с таким названием уже существует");
-        //}
+        if(courseWorkRepository.existsCourseWorkByTitle(request.getTitle())){
+            return ResponseEntity.badRequest().body("Тема с таким названием уже существует");
+        }
         CourseWork courseWork = new CourseWork();
         courseWork.setTitle(request.getTitle());
         courseWork.setShortDescription(request.getShortDescription());
         courseWork.setDescription(request.getLongDescription());
         courseWork.setRequirements(request.getRequirements());
         System.out.println(courseWork.getTitle());
-        var rep = professorRepository.getProfessorByProfessorId(Integer.parseInt(request.getProfessorid()));
+        var rep = professorRepository.getProfessorByProfessorId(Integer.parseInt(request.getProfessorId()));
         System.out.println(rep.getId());
         courseWork.setProfessor(rep);
         courseWork.setDepartment(departmentRepository.findByDepartmentName(request.getDepartment()));

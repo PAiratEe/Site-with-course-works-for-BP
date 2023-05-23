@@ -42,7 +42,7 @@ export default function BasicMenu() {
                     textTransform: "capitalize",
                 }}
             >
-                {localStorage.getItem('auth').split(' ')[2]} {localStorage.getItem('auth').split(' ')[3]}
+                {localStorage.getItem('name')} {localStorage.getItem('surname')}
             </Button>
             <Menu
                 id="basic-menu"
