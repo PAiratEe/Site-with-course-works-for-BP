@@ -23,7 +23,7 @@ const Login = () => {
         event.preventDefault()
         AuthService.login(email, password).then(response => {
                 setIsAuth(true)
-                localStorage.setItem('auth', response.data.id)
+                localStorage.setItem('auth', response.data.id + " " + response.data.studentEmail + " " + response.data.studentName + " " + response.data.studentSurname)
                 navigate(-1)
             }
         )
@@ -37,8 +37,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="Введите логин st"
-                    pattern=".+@student\.spbu\.ru"
+                    placeholder="Введите email"
                     required
                     onChange={onChangeEmail}
                 />
