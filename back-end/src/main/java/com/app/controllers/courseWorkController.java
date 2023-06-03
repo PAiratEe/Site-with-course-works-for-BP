@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
 public class courseWorkController {
     @Autowired
     CourseWorkRepository courseWorkRepository;
@@ -22,7 +21,7 @@ public class courseWorkController {
     @Autowired
     DepartmentRepository departmentRepository;
 
-    @PostMapping("/createNewCourseWork")
+    @PostMapping("/back/createNewCourseWork")
     public ResponseEntity<?> createNewCourseWork(@RequestBody CreateCourseWorkRequest request) {
         if(courseWorkRepository.existsCourseWorkByTitle(request.getTitle())){
             return ResponseEntity.badRequest().body("Тема с таким названием уже существует");
@@ -42,7 +41,7 @@ public class courseWorkController {
         return ResponseEntity.ok("Новая тема создана!");
     }
 
-    @GetMapping("/getAllCourseWorksByUserId")
+    @GetMapping("/back/getAllCourseWorksByUserId")
     public ResponseEntity<?> getAllCourseWorksByUserId(@RequestParam String id){
         if(!courseWorkRepository.existsByProfessorId(Integer.parseInt(id))){
             return ResponseEntity.ok("У вас еще нет работ!");

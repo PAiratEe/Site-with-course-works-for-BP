@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 public class signUpStudentController {
 
     @Autowired
@@ -23,7 +22,7 @@ public class signUpStudentController {
     @Autowired
     DepartmentRepository departmentRepository;
 
-    @PostMapping("/register")
+    @PostMapping("/back/register")
     public ResponseEntity<?> registerUser(@RequestBody SignUpStudentRequest signUpStudentRequest) {
 
         if (studentRepository.existsStudentByStudentEmail(signUpStudentRequest.getEmail())) {
@@ -43,7 +42,7 @@ public class signUpStudentController {
         return ResponseEntity.ok("Пользователь был успешно зарегистрирован");
     }
 
-    @GetMapping("/login")
+    @GetMapping("/back/login")
     public ResponseEntity<?> checkUser(@RequestParam String email, @RequestParam String password) {
 
         if (professorRepository.existsProfessorByProfessorEmail(email)) {

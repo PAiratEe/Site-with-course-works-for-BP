@@ -19,13 +19,13 @@ public class departmentPageController {
     @Autowired
     ProfessorRepository professorRepository;
 
-    @GetMapping("/departments")
+    @GetMapping("/back/departments")
     public ResponseEntity<?> getDepartments(){
         var departments = departmentRepository.findAll();
         return new ResponseEntity<>(departments, HttpStatus.OK);
     }
 
-    @GetMapping("/getAllFromDepartment")
+    @GetMapping("/back/getAllFromDepartment")
     public ResponseEntity<?> getAllFromDepartment(@RequestParam @PathVariable String id){
         var proffessors = professorRepository.getProfessorsByDepartmentId(Integer.parseInt(id));
         return  new ResponseEntity<>(proffessors,HttpStatus.OK);
