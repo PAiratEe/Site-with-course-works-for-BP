@@ -16,7 +16,7 @@ public class mainPageController {
     @Autowired
     private CourseWorkRepository courseWorkRepository;
 
-    @GetMapping("/main")
+    @GetMapping("/back/main")
     private ResponseEntity<?> displayPage(@RequestParam @PathVariable int page) {
         var firstId = 0;
         var courseWorks = courseWorkRepository.findByCourseWorkIdIn(IntStream.range(firstId, firstId + 10000).boxed().toList());

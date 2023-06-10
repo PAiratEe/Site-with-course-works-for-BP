@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 public class currentCourseWorkController {
 
     @Autowired
     CourseWorkRepository courseWorkRepository;
 
 
-    @GetMapping("/getInfoAboutCourseWork")
+    @GetMapping("/back/getInfoAboutCourseWork")
     public ResponseEntity<?> getInfoAboutSelectedCourseWork(@RequestParam String id){
         var courseWork =courseWorkRepository.findByCourseWorkId(Integer.parseInt(id));
         if(courseWork == null){

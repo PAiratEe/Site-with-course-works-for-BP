@@ -1,0 +1,31 @@
+version: "1.0"
+
+services:
+  back-end:
+    image: scott-back
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresql
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url": "jdbc:postgresql://host.docker.internal:5432/SomeDb",
+        "spring.datasource.username": "postgres",
+        "spring.datasource.password": "Nature"
+      }'
+
+  postgresql:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_ROOT_PASSWORD: Nature
+      POSTGRES_DATABASE: SomeDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Nature
+
+  front-end:
+    image: scott
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_HOST: http://localhost:8080

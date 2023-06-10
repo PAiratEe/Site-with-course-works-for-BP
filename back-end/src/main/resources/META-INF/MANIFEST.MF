@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Main-Class: com.app.SpringBootStarter
+Class-Path: spring-aop-6.0.7.jar jackson-datatype-jsr310-2.14.2.jar logb
+ ack-classic-1.4.6.jar jackson-module-parameter-names-2.14.2.jar postgre
+ sql-42.5.4.jar spring-expression-6.0.7.jar spring-security-core-6.0.2.j
+ ar validation-api-2.0.1.Final.jar spring-boot-starter-tomcat-3.0.5.jar 
+ spring-security-web-6.0.2.jar jackson-annotations-2.14.2.jar tomcat-emb
+ ed-websocket-10.1.7.jar spring-security-crypto-6.0.2.jar spring-beans-6
+ .0.7.jar spring-webmvc-6.0.7.jar spring-boot-starter-web-3.0.5.jar tomc
+ at-embed-core-10.1.7.jar lombok-1.18.26.jar log4j-to-slf4j-2.19.0.jar j
+ ul-to-slf4j-2.0.7.jar spring-context-6.0.7.jar spring-boot-starter-secu
+ rity-3.0.5.jar spring-security-config-6.0.2.jar slf4j-api-2.0.7.jar spr
+ ing-boot-starter-3.0.5.jar spring-boot-3.0.5.jar logback-core-1.4.6.jar
+  jackson-databind-2.14.2.jar tomcat-embed-el-10.1.7.jar spring-core-6.0
+ .7.jar log4j-api-2.19.0.jar jakarta.annotation-api-2.1.1.jar micrometer
+ -commons-1.10.5.jar spring-boot-starter-json-3.0.5.jar jackson-datatype
+ -jdk8-2.14.2.jar checker-qual-3.5.0.jar micrometer-observation-1.10.5.j
+ ar spring-jcl-6.0.7.jar spring-boot-starter-logging-3.0.5.jar spring-bo
+ ot-autoconfigure-3.0.5.jar jackson-core-2.14.2.jar spring-web-6.0.7.jar
+  snakeyaml-1.33.jar
+

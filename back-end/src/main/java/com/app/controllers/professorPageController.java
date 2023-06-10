@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
 public class professorPageController {
 
     @Autowired
@@ -18,7 +17,7 @@ public class professorPageController {
     @Autowired
     StudentRepository studentRepository;
 
-    @GetMapping("/getProfessorsList")
+    @GetMapping("/back/getProfessorsList")
     ResponseEntity<?> getProfessorsList(){
         var professors = professorRepository.findAll();
         if(professors == null){
@@ -28,13 +27,13 @@ public class professorPageController {
 
     }
 
-    @GetMapping("/infoAboutProf")
+    @GetMapping("/back/infoAboutProf")
     ResponseEntity<?> getInfoAboutProf(@RequestParam String id){
         var professorInfo = professorRepository.getProfessorByProfessorId(Integer.parseInt(id));
         return new ResponseEntity<>(professorInfo,HttpStatus.OK);
     }
 
-    @GetMapping("/infoAboutStud")
+    @GetMapping("/back/infoAboutStud")
     ResponseEntity<?> getInfoAboutStud(@RequestParam String id){
         var studentInfo = studentRepository.getStudentById(Integer.parseInt(id));
         return new ResponseEntity<>(studentInfo,HttpStatus.OK);
