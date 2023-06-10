@@ -52,7 +52,7 @@ spec:
       - name: backend
         image: prostotema1/repoforbpproject:backend
         ports:
-        - containerPort: 80
+        - containerPort: 8080
       - name : database
         image: prostotema1/repoforbpproject:database
         ports:
