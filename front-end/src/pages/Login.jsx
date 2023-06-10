@@ -24,6 +24,7 @@ const Login = () => {
         var response = AuthService.login(email, password).then(response => {
                 setIsAuth(true)
                 localStorage.setItem('id',response.data.id)
+                //localStorage.setItem('jwt',response.data.jwt)
                 if(response.data.professorEmail !== undefined){
                     localStorage.setItem('email', response.data.professorEmail)
                     localStorage.setItem('name', response.data.professorName)

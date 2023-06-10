@@ -1,7 +1,15 @@
 package com.app.db.entities;
 
+import com.app.db.entities.user.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "professor",schema = "projectschema")
 public class Professor {
@@ -11,6 +19,10 @@ public class Professor {
     @Column(name = "professorid")
     private Integer professorId;
 
+    @JoinColumn(name = "userid", referencedColumnName = "userid")
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
+
     @Column(name = "professorname")
     private String professorName;
 
@@ -19,6 +31,7 @@ public class Professor {
 
     @Column(name = "professorpatronymic")
     private String professorPatronymic;
+
     @Column(name = "professoremail")
     private String professorEmail;
 

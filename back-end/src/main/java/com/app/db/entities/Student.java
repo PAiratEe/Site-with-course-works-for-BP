@@ -1,7 +1,16 @@
 package com.app.db.entities;
 
+import com.app.db.entities.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "student",schema = "projectschema")
 public class Student{
@@ -11,12 +20,18 @@ public class Student{
     @Column(name = "studentid")
     private Integer studentId;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userid", referencedColumnName = "userid")
+    private User user;
+
     @Column(name = "studentname")
     private String studentName;
     @Column(name = "studentsurname")
     private String studentSurname;
     @Column(name = "studentpatronymic")
     private String studentPatronymic;
+
+
     @Column(name = "studentemail")
     private String studentEmail;
 
@@ -35,11 +50,11 @@ public class Student{
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "studentcoursework", referencedColumnName = "courseworkid")
     private CourseWork courseWork;
-
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "studenteducationprogramm", referencedColumnName = "educationprogrammid")
-    private EducationProgramm educationProgramm;
+//
+//
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "studenteducationprogramm", referencedColumnName = "educationprogrammid")
+//    private EducationProgramm educationProgramm;
 
 
     public Integer getId() {
@@ -98,9 +113,9 @@ public class Student{
         return this.courseWork;
     }
 
-    public EducationProgramm getEducationProgramm() {
-        return this.educationProgramm;
-    }
+//    public EducationProgramm getEducationProgramm() {
+//        return this.educationProgramm;
+//    }
 
     public void setDepartment(Department department) {
         this.department = department;
@@ -110,9 +125,9 @@ public class Student{
         this.courseWork = courseWork;
     }
 
-    public void setEducationProgramm(EducationProgramm educationProgramm) {
-        this.educationProgramm = educationProgramm;
-    }
+//    public void setEducationProgramm(EducationProgramm educationProgramm) {
+//        this.educationProgramm = educationProgramm;
+//    }
 
     public String getPassword() {
         return this.password;

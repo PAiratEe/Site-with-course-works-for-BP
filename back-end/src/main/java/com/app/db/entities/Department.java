@@ -14,6 +14,12 @@ public class Department {
     @Column(name = "departmentname")
     private String departmentName;
 
+    @OneToOne(mappedBy = "department")
+    private Student student;
+
+    @OneToOne(mappedBy = "department")
+    private Professor professor;
+
     public Integer getId() {
         return this.departmentId;
     }
