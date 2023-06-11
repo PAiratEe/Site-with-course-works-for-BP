@@ -4,9 +4,12 @@ import {back_url} from "../App";
 export default class AuthService {
 
   static async login(email, password) {
-    const response = await axios.get(
-        back_url + "/login?email=" + email + "&password=" + password)
-    return response
+    return await axios.post(
+        back_url + "/login",
+        {
+          "email": email,
+          "password": password
+        })
   }
 
   static async registerStudent(name, surname, patronymic, email, password, department, course) {
@@ -18,6 +21,7 @@ export default class AuthService {
       "password": password,
       "course": course,
       "department": department,
+      "isProfessor": false
     })
   }
 
@@ -28,7 +32,8 @@ export default class AuthService {
       "patronymic": patronymic,
       "email": email,
       "password": password,
-      "post": postt
+      "post": postt,
+      "isProfessor": true
     })
   }
 }
