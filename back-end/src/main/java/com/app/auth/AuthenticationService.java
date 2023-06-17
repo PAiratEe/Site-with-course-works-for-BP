@@ -66,7 +66,7 @@ public class AuthenticationService {
                 .studentSurname(request.getSurname())
                 .studentPatronymic(request.getPatronymic())
                 .studentCourseNumber(Integer.parseInt(request.getCourse()))
-                .user(repository.findByEmail(request.getEmail()).orElseThrow())
+                //.user(repository.findByEmail(request.getEmail()).orElseThrow())
                 .build();
             studentRepository.save(student);
         }

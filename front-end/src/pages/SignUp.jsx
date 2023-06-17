@@ -18,7 +18,7 @@ import ProfessorService from "../API/ProfessorService";
 import StudentService from "../API/StudentService";
 
 const SignUp = () => {
-  //const {isAuth, setIsAuth} = useContext(AuthContext)
+  const {isAuth, setIsAuth} = useContext(AuthContext)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [passwordRepeat, setPasswordConfirm] = useState("")
@@ -101,40 +101,27 @@ const SignUp = () => {
   function signup(e) {
     e.preventDefault()
     if (checked1) {
-      // AuthService.registerStudent(name, surname, patronymic, email, password,
-      //     department, course).then(
-      //     response => {
-      //       setIsAuth(true)
-      //       // let student = ProfessorService.getProfessorByName(name);
-      //       // localStorage.setItem(student.studentId, surname + " " + name)
-      //       localStorage.setItem('auth', StudentService.getStudentByEmail(email).id)
-      //       navigate(-1)
-      //     }
-      // )
-
-        var response = AuthService.registerStudent(name, surname, patronymic, email, password, department, course).then(response => {
-            //setIsAuth(true)
-            localStorage.setItem('jwt',response.data.jwt)
-            localStorage.setItem('email', response.data.student.studentEmail)
-            localStorage.setItem('name', response.data.student.studentName)
-            localStorage.setItem('surname',response.data.student.studentSurname)
-            localStorage.setItem('state',response.data.student.studentCourseNumber + " курс " + response.data.student.studentCourseName)
-            localStorage.setItem('isProfessor','false')
-            localStorage.setItem('id', response.data.student.id)
-            navigate(-1)})
-
+      AuthService.registerStudent(name, surname, patronymic, email, password,
+          department, course).then(
+          response => {
+            setIsAuth(true)
+            // let student = ProfessorService.getProfessorByName(name);
+            // localStorage.setItem(student.studentId, surname + " " + name)
+            localStorage.setItem('auth', StudentService.getStudentByEmail(email).id)
+            navigate(-1)
+          }
+      )
     } else {
-        var response = AuthService.registerTeacher(name, surname, patronymic, email, password, postt).then(response => {
-            //setIsAuth(true)
-            localStorage.setItem('jwt',response.data.jwt)
-            localStorage.setItem('email', response.data.professor.professorEmail)
-            localStorage.setItem('name', response.data.professor.professorName)
-            localStorage.setItem('surname',response.data.professor.professorSecondName)
-            localStorage.setItem('patronymic',response.data.professor.professorPatronymic)
-            localStorage.setItem('state',response.data.professor.professorPost)
-            localStorage.setItem('isProfessor','true')
-            localStorage.setItem('id', response.data.professor.id)
-            navigate(-1)})
+      AuthService.registerTeacher(name, surname, patronymic, email, password,
+          postt).then(
+          response => {
+            setIsAuth(true)
+            // let professor = ProfessorService.getProfessorByName(name);
+            // localStorage.setItem(professor.professorId, surname + " " + name)
+            localStorage.setItem('auth', StudentService.getStudentByEmail(email).id)
+            navigate(-1)
+          }
+      )
     }
   }
 

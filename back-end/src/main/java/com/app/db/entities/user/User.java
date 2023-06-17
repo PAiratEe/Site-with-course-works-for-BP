@@ -49,11 +49,11 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @OneToOne(mappedBy = "user")
-    private Student student;
-
-    @OneToOne(mappedBy = "user")
-    private Professor professor;
+//    @OneToOne(mappedBy = "user")
+//    private Student student;
+//
+//    @OneToOne(mappedBy = "user")
+//    private Professor professor;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

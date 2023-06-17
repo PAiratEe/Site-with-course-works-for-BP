@@ -18,10 +18,10 @@ public class Professor {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "professorid")
     private Integer professorId;
-
-    @JoinColumn(name = "userid", referencedColumnName = "userid")
-    @OneToOne(cascade = CascadeType.ALL)
-    private User user;
+//
+//    @JoinColumn(name = "userid", referencedColumnName = "userid")
+//    @OneToOne(cascade = CascadeType.ALL)
+//    private User user;
 
     @Column(name = "professorname")
     private String professorName;
