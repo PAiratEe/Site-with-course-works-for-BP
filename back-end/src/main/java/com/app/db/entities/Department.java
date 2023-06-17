@@ -1,6 +1,7 @@
 package com.app.db.entities;
 
 import jakarta.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "department",schema = "projectschema")
@@ -17,8 +18,8 @@ public class Department {
     @OneToOne(mappedBy = "department")
     private Student student;
 
-    @OneToOne(mappedBy = "department")
-    private Professor professor;
+    @OneToMany(mappedBy = "department")
+    private Collection<Professor> professor;
 
     public Integer getId() {
         return this.departmentId;

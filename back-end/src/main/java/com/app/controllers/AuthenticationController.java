@@ -15,14 +15,14 @@ public class AuthenticationController {
 
     private final AuthenticationService service;
 
-    @PostMapping("/register")
+    @PostMapping("/back/register")
     public ResponseEntity<AuthenticationResponse> register(
         @RequestBody RegisterRequest request
     ) throws Exception {
         return ResponseEntity.ok(service.register(request));
     }
 
-    @PostMapping("/login")
+    @PostMapping("/back/login")
     public ResponseEntity<AuthenticationResponse> login(
         @RequestBody AuthenticationRequest request
     ) {
