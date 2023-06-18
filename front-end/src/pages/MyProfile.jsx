@@ -90,7 +90,7 @@ const MyProfile = () => {
                                             marginLeft: "10px",
                                             width: "40%"
                                         }}>
-                                            {works.map((coursework, index) =>
+                                            {works === "У вас еще нет работ!" ? "У вас пока нет работ" : works.map((coursework, index) =>
                                                 <WorkItem number={index + 1} coursework={coursework} key={coursework.courseWorkId}/>)}
                                         </div>
                                     </div>
