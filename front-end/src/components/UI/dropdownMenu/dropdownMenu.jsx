@@ -16,7 +16,7 @@ export default function BasicMenu() {
     const logout = event => {
         event.preventDefault()
         setIsAuth(false)
-        localStorage.setItem('auth', 'Airat')
+        localStorage.clear()
     }
 
     const handleClick = (event) => {
