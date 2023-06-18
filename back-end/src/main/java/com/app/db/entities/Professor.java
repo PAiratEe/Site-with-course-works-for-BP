@@ -41,7 +41,7 @@ public class Professor {
     @Column(name = "professorpassword")
     private String professorPassword;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "departmentid", referencedColumnName = "departmentid")
     private Department department;
 

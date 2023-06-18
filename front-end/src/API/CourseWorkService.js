@@ -14,7 +14,10 @@ export default class CourseWorkService {
     }
 
     static async getAllCourseWorksByProfessorId(id){
-        const response = await axios.get(back_url + "/getAllCourseWorksByUserId?id=" + id)
+        const headers = {
+            'Authorization': 'bearer ' + localStorage.getItem('jwt')
+        }
+        const response = await axios.get(back_url + "/getAllCourseWorksByUserId?id=" + id, {headers})
         return response.data
     }
 

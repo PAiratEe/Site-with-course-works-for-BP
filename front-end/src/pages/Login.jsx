@@ -22,24 +22,30 @@ const Login = () => {
     function login(event) {
         event.preventDefault()
         var response = AuthService.login(email, password).then(response => {
-                setIsAuth(true)
-                localStorage.setItem('id',response.data.id)
-                //localStorage.setItem('jwt',response.data.jwt)
-                if(response.data.professorEmail !== undefined){
-                    localStorage.setItem('email', response.data.professorEmail)
-                    localStorage.setItem('name', response.data.professorName)
-                    localStorage.setItem('surname',response.data.professorSecondName)
-                    localStorage.setItem('patronymic',response.data.professorPatronymic)
-                    localStorage.setItem('state',response.data.professorPost)
-                    localStorage.setItem('isStud','false')
-                }
-                else {
-                    localStorage.setItem('email', response.data.studentEmail)
-                    localStorage.setItem('name', response.data.studentName)
-                    localStorage.setItem('surname',response.data.studentSurname)
-                    localStorage.setItem('state',response.data.studentCourseNumber + " курс " + response.data.studentCourseName)
-                    localStorage.setItem('isStud','true')
-                }
+            setIsAuth(true)
+            localStorage.setItem('jwt',response.data.jwt)
+            if(response.data.professor !== null) {
+                localStorage.setItem('email',
+                    response.data.professor.professorEmail)
+                localStorage.setItem('name',
+                    response.data.professor.professorName)
+                localStorage.setItem('surname',
+                    response.data.professor.professorSecondName)
+                localStorage.setItem('patronymic',
+                    response.data.professor.professorPatronymic)
+                localStorage.setItem('state',
+                    response.data.professor.professorPost)
+                localStorage.setItem('isProfessor', 'true')
+                localStorage.setItem('id', response.data.professor.id)
+            }
+            else {
+                localStorage.setItem('email', response.data.student.studentEmail)
+                localStorage.setItem('name', response.data.student.studentName)
+                localStorage.setItem('surname',response.data.student.studentSurname)
+                localStorage.setItem('state',response.data.student.studentCourseNumber + " курс " + response.data.student.studentCourseName)
+                localStorage.setItem('isProfessor','false')
+                localStorage.setItem('id', response.data.student.id)
+            }
                 navigate(-1)
             }
         )
