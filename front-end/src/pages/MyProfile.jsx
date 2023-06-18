@@ -16,7 +16,7 @@ const MyProfile = () => {
     const email = localStorage.getItem('email')
     const patronymic = localStorage.getItem('patronymic')
     const state = localStorage.getItem('state')
-    const isStud = localStorage.getItem('isStud')
+    const isStud = !localStorage.getItem('isProfessor')
     const router = useNavigate()
     const [works, setWorks] = useState([])
     const [fetchWorks, isWorksLoading] = useFetching(async () => {

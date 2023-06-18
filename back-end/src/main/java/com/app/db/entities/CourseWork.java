@@ -7,7 +7,8 @@ import jakarta.persistence.*;
 public class CourseWork {
     public CourseWork(){}
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq2")
+    @SequenceGenerator(name = "seq2", initialValue = 8)
     @Column(name = "courseworkid")
     private Integer courseWorkId;
 

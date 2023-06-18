@@ -39,7 +39,7 @@ const CourseWorkForm = () => {
   const addNewPost = (e) => {
     e.preventDefault()
     // console.log(work.title, work.shortDescription, work.longDescription, work.requirements, auth)
-    CourseWorkService.sendNewCourseWork(work.title, work.shortDescription, work.longDescription, work.requirements, "Прикладная кибернетика", auth)
+    CourseWorkService.sendNewCourseWork(work.title, work.shortDescription, work.longDescription, work.requirements, "Прикладная кибернетика", localStorage.getItem('id'))
     navigate(-1)
   }
 
